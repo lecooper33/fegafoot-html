@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualites</title>
+</head>
+<body>
+  <section class="actualites" id="actualites-detail">
+    <div class="actu-detail" id="detail-container"></div>
+    <h2>Autres actualités</h2>
+    <div class="grid-actus" id="autres-actus"></div>
+  </section>
+
+  <script>
+    const actu = JSON.parse(localStorage.getItem("actuChoisie"));
+    const autres = actualites.filter(a => a.id !== actu.id);
+
+    const detail = document.getElementById("detail-container");
+    detail.innerHTML = `
+      <div class="actu-card">
+        <img src="${actu.image}" class="actu-img">
+        <div class="actu-content">
+          <h3 class="actu-title">${actu.titre}</h3>
+          <p class="actu-text">${actu.texte}</p>
+          <small class="actu-date">${actu.date}</small>
+        </div>
+      </div>
+    `;
+
+    const autresContainer = document.getElementById("autres-actus");
+    autres.forEach(a => {
+      const card = document.createElement("div");
+      card.className = "actu-card";
+      card.innerHTML = `
+        <img src="${a.image}" class="actu-img">
+        <div class="actu-content">
+          <h3 class="actu-title">${a.titre}</h3>
+          <p class="actu-text">${a.texte}</p>
+          <small class="actu-date">${a.date}</small>
+        </div>
+      `;
+      card.addEventListener("click", () => {
+        localStorage.setItem("actuChoisie", JSON.stringify(a));
+        window.location.reload();
+      });
+      autresContainer.appendChild(card);
+    });
+  </script>
+</body>
+
+</html>

@@ -63,22 +63,51 @@
                 <!-- Liste générée par JS -->
             </div>
         </div>
-        
         <!-- Version mobile (slider) -->
-        <div class="mobile-slider">
-            <div class="slider-container" id="slider-container">
+        <div class="mobile-slider" id="actualites-mobile-slider">
+            <div class="slider-container" id="actualites-slider-container">
                 <!-- Contenu généré par JS -->
             </div>
-            <div class="slider-dots" id="slider-dots">
+            <div class="slider-dots" id="actualites-slider-dots">
                 <!-- Points de navigation générés par JS -->
             </div>
         </div>
     </div>
 </section>
     <!-- calendrier des match -->
-    
+
+ <section class="calendrier">
+    <h1>CALENDRIER DES MATCHS GABONAIS</h1>
+    <div class="filtres">
+        <button class="btn-filtre active" data-competition="all">
+            <iconify-icon icon="mdi:view-list"></iconify-icon> Tous
+        </button>
+        <button class="btn-filtre" data-competition="Ligue 1">
+            <iconify-icon icon="mdi:trophy"></iconify-icon> Ligue 1
+        </button>
+        <button class="btn-filtre" data-competition="Coupe">
+            <iconify-icon icon="mdi:cup"></iconify-icon> Coupe
+        </button>
+        <button class="btn-filtre" data-competition="CAF">
+            <iconify-icon icon="mdi:earth-africa"></iconify-icon> CAF
+        </button>
+    </div>
+    <!-- Version Desktop -->
+    <div class="match-desktop-view" id="matchs-desktop-view">
+        <!-- Contenu généré par JavaScript -->
+    </div>
+    <!-- Version Mobile -->
+    <div class="match-mobile-slider" id="matchs-mobile-slider">
+        <div class="match-slider-container" id="matchs-slider-container">
+            <!-- Slides générés par JavaScript -->
+        </div>
+        <div class="match-slider-dots" id="matchs-slider-dots"></div>
+    </div>
+</section>
+
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   <script src="script.js"></script>
   <script src="actu.js"></script>
+  <script src="match.js"></script>
 </body>
 </html>

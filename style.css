@@ -312,6 +312,7 @@ nav {
   margin-bottom: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -404,7 +405,7 @@ nav {
 header.hide {
   transform: translateY(-100%);
 }
-/* sections des calendrier  */
+
 
 .actualites {
   padding: 60px 20px;
@@ -540,6 +541,7 @@ header.hide {
   margin-bottom: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -550,79 +552,6 @@ header.hide {
   font-weight: bold;
 }
 
-/* Slider Mobile */
-.slider-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.slider-container::-webkit-scrollbar {
-  display: none;
-}
-
-.slide {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  width: 100%;
-  background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
-  border: 1px solid var(--panthere-or);
-  margin-right: 20px;
-}
-
-.slide img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 2px solid var(--panthere-bleu);
-}
-
-.slide h3 {
-  color: var(--panthere-or);
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.slide .date {
-  color: var(--panthere-or);
-  margin-bottom: 15px;
-  font-size: 0.9em;
-  font-weight: bold;
-}
-
-.slide .contenu {
-  line-height: 1.6;
-  font-size: 1em;
-  color: var(--panthere-texte);
-}
-
-.slider-dots {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--panthere-texte);
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.dot.active {
-  background: var(--panthere-or);
-}
-
 /* Responsive Design */
 @media (max-width: 900px) {
   .desktop-view {
@@ -630,14 +559,326 @@ header.hide {
   }
   
   .mobile-slider {
-    display: block;
+    display: block !important;
   }
   
   .actualites-container {
     flex-direction: column;
+    height: auto;
   }
   
   .actualites h2 {
     font-size: 2em;
   }
+  
+  /* Ajout pour le slider mobile actualités */
+  #actualites-slider-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  #actualites-slider-container::-webkit-scrollbar {
+    display: none;
+  }
+  #actualites-slider-dots {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+  #actualites-slider-container .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--panthere-or);
+    margin-right: 1rem;
+  }
+  #actualites-slider-container .slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid var(--panthere-bleu);
+  }
+  #actualites-slider-container .slide h3 {
+    color: var(--panthere-or);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  #actualites-slider-container .slide .date {
+    color: var(--panthere-or);
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  #actualites-slider-container .slide .contenu {
+    line-height: 1.6;
+    font-size: 1em;
+    color: var(--panthere-texte);
+  }
+  #actualites-slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--panthere-texte);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  #actualites-slider-dots .dot.active {
+    background: var(--panthere-or);
+    transform: scale(1.2);
+  }
+}
+
+/* section calendrier */
+:root {
+    /* Palette officielle des Panthères du Gabon */
+    --panthere-noir: #000000;
+    --panthere-or: #FFD700;
+    --panthere-vert: #006B3D;
+    --panthere-bleu: #0056B8;
+    --panthere-gris-fonce: #1A1A1A;
+    --panthere-gris-clair: #333333;
+    --panthere-blanc: #FFFFFF;
+    --panthere-texte: #F5F5F5;
+}
+
+.calendrier {
+    width: 100%;
+    min-height: 70vh;
+    padding: 2rem;
+    background-color: var(--panthere-gris-fonce);
+    color: var(--panthere-texte);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 3px solid var(--panthere-or);
+}
+
+.calendrier h1 {
+    color: var(--panthere-or);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    font-weight: 600;
+}
+
+.calendrier h1::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 3px;
+    background: var(--panthere-bleu);
+}
+
+.filtres {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-filtre {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: var(--panthere-gris-clair);
+    color: var(--panthere-texte);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.btn-filtre:hover, .btn-filtre.active {
+    background-color: var(--panthere-or);
+    color: var(--panthere-noir);
+    font-weight: 500;
+}
+
+/* Version Desktop calendrier */
+.match-desktop-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.match-card {
+    background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--panthere-or);
+    transition: transform 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-match {
+    padding: 1.5rem;
+}
+
+.match-title {
+    color: var(--panthere-or);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--panthere-vert);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.match-title .competition {
+    font-size: 0.7rem;
+    background: var(--panthere-vert);
+    color: var(--panthere-blanc);
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+}
+
+.equipes {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.equipe img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.vs {
+    font-weight: bold;
+    color: var(--panthere-or);
+    font-size: 1.1rem;
+}
+
+.match {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--panthere-gris-clair);
+    font-size: 0.9rem;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.match span:first-child {
+    color: var(--panthere-or);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.iconify {
+    font-size: 1.1rem;
+    color: var(--panthere-or);
+}
+
+/* Version Mobile calendrier */
+.match-mobile-slider {
+    display: none;
+    width: 100%;
+}
+
+.match-slider-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.match-slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.match-slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100%;
+    background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--panthere-or);
+    margin-right: 1rem;
+}
+
+.match-slide .info-match {
+    padding: 0;
+}
+
+.match-slider-dots {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.match-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--panthere-texte);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.match-dot.active {
+    background: var(--panthere-or);
+    transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+    .match-desktop-view {
+        display: none;
+    }
+    .match-mobile-slider {
+        display: block;
+    }
+    
+    .calendrier h1 {
+        font-size: 2rem;
+    }
+    
+    .btn-filtre {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
 }

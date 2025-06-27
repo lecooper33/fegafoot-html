@@ -108,16 +108,18 @@ function afficherActuPrincipale(actu) {
     `;
 }
 
-// Affiche le slider mobile
+// Slider mobile actualités
+let actuCurrentSlide = 0;
+let actuSlideInterval;
+const actuSlideDuration = 5000;
+
 function afficherMobileSlider() {
-    const sliderContainer = document.getElementById('slider-container');
-    const dotsContainer = document.getElementById('slider-dots');
-    
+    const sliderContainer = document.getElementById('actualites-slider-container');
+    const dotsContainer = document.getElementById('actualites-slider-dots');
     sliderContainer.innerHTML = '';
     dotsContainer.innerHTML = '';
-    
+
     actualites.forEach((actu, index) => {
-        // Crée les slides
         const slide = document.createElement('div');
         slide.className = 'slide';
         slide.innerHTML = `
@@ -126,97 +128,44 @@ function afficherMobileSlider() {
             <div class="date">${actu.date}</div>
             <div class="contenu">${actu.contenu}</div>
         `;
+        if (index === 0) slide.classList.add('active');
         sliderContainer.appendChild(slide);
-        
-        // Crée les points de navigation
-        const dot = document.createElement('div');
+
+        const dot = document.createElement('span');
         dot.className = 'dot';
         if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-        });
+        dot.addEventListener('click', () => goToActuSlide(index));
         dotsContainer.appendChild(dot);
     });
+
+    actuCurrentSlide = 0;
+    startActuSlider();
 }
 
-// Initialise le slider mobile
-function initSlider() {
-    const slider = document.getElementById('slider-container');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    // Gestion du glissement tactile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    slider.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        clearInterval(slideInterval); // Arrête l'auto-défilement pendant l'interaction
-    }, {passive: true});
-    
-    slider.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        slideInterval = setInterval(nextSlide, slideDuration); // Redémarre l'auto-défilement
-    }, {passive: true});
-    
-    function handleSwipe() {
-        const diff = touchStartX - touchEndX;
-        if (diff > 50) {
-            // Glissement vers la gauche - slide suivant
-            nextSlide();
-        } else if (diff < -50) {
-            // Glissement vers la droite - slide précédent
-            prevSlide();
-        }
-    }
-    
-    // Défilement automatique
-    slideInterval = setInterval(nextSlide, slideDuration);
+function startActuSlider() {
+    clearInterval(actuSlideInterval);
+    actuSlideInterval = setInterval(() => {
+        nextActuSlide();
+    }, actuSlideDuration);
 }
 
-// Passe au slide suivant
-function nextSlide() {
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlider();
+function nextActuSlide() {
+    const slides = document.querySelectorAll('#actualites-slider-container .slide');
+    const dots = document.querySelectorAll('#actualites-slider-dots .dot');
+    slides[actuCurrentSlide].classList.remove('active');
+    dots[actuCurrentSlide].classList.remove('active');
+    actuCurrentSlide = (actuCurrentSlide + 1) % slides.length;
+    slides[actuCurrentSlide].classList.add('active');
+    dots[actuCurrentSlide].classList.add('active');
 }
 
-// Retourne au slide précédent
-function prevSlide() {
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateSlider();
-}
-
-// Va à un slide spécifique
-function goToSlide(index) {
-    currentSlide = index;
-    updateSlider();
-}
-
-// Met à jour l'affichage du slider
-function updateSlider() {
-    const slider = document.getElementById('slider-container');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    // Met à jour la position du slider
-    slider.scrollTo({
-        left: slides[currentSlide].offsetLeft,
-        behavior: 'smooth'
-    });
-    
-    // Met à jour les points de navigation
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
-    
-    // Réinitialise le timer d'auto-défilement
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, slideDuration);
+function goToActuSlide(index) {
+    const slides = document.querySelectorAll('#actualites-slider-container .slide');
+    const dots = document.querySelectorAll('#actualites-slider-dots .dot');
+    slides[actuCurrentSlide].classList.remove('active');
+    dots[actuCurrentSlide].classList.remove('active');
+    actuCurrentSlide = index;
+    slides[actuCurrentSlide].classList.add('active');
+    dots[actuCurrentSlide].classList.add('active');
+    startActuSlider();
 }

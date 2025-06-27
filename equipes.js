@@ -25,18 +25,35 @@ const joueurs = [
 // Variables globales
 let currentIndex = 0;
 let autoSlideInterval;
-let isMobile = window.innerWidth <= 768;
+let isMobile = window.innerWidth <= 900;
 const carousel = document.querySelector('.equipe-carousel');
-const nbVisibleDesktop = 4; // Nombre de joueurs visibles sur desktop
-const nbVisibleMobile = 2; // Nombre de joueurs visibles sur mobile
-const scrollStep = isMobile ? nbVisibleMobile : 2; // Nombre de cartes à défiler
+const dotsContainer = document.createElement('div');
+dotsContainer.className = 'joueur-slider-dots';
+document.querySelector('.equipe-carousel-wrapper').appendChild(dotsContainer);
 
 // Initialisation du carrousel
 function initCarousel() {
-  isMobile = window.innerWidth <= 768;
+  isMobile = window.innerWidth <= 900;
   renderCarousel();
   setupAutoSlide();
   setupEventListeners();
+  
+  // Pour mobile, on initialise le slider avec les dots
+  if (isMobile) {
+    createDots();
+  }
+}
+
+// Crée les points de navigation
+function createDots() {
+  dotsContainer.innerHTML = '';
+  joueurs.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.className = 'joueur-dot';
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
 }
 
 // Rendu du carrousel
@@ -45,29 +62,25 @@ function renderCarousel() {
   
   carousel.innerHTML = '';
   
-  const nbVisible = isMobile ? nbVisibleMobile : nbVisibleDesktop;
-  
-  // Afficher les cartes visibles
-  for (let i = 0; i < Math.min(nbVisible, joueurs.length); i++) {
-    const idx = (currentIndex + i) % joueurs.length;
-    const joueur = joueurs[idx];
-    createPlayerCard(joueur);
-  }
-  
-  // Pour le mobile, on clone les éléments pour un défilement infini fluide
   if (isMobile) {
-    for (let i = 0; i < nbVisibleMobile; i++) {
-      const idx = (currentIndex + i) % joueurs.length;
+    // Version mobile - une seule carte visible
+    const joueur = joueurs[currentIndex];
+    createPlayerCard(joueur);
+  } else {
+    // Version desktop - 4 cartes visibles
+    const startIndex = currentIndex % joueurs.length;
+    for (let i = 0; i < 4; i++) {
+      const idx = (startIndex + i) % joueurs.length;
       const joueur = joueurs[idx];
-      createPlayerCard(joueur, true); // true pour indiquer que c'est un clone
+      createPlayerCard(joueur);
     }
   }
 }
 
 // Création d'une carte de joueur
-function createPlayerCard(joueur, isClone = false) {
+function createPlayerCard(joueur) {
   const div = document.createElement('div');
-  div.className = 'joueur' + (isClone ? ' clone' : '');
+  div.className = 'joueur';
   div.innerHTML = `
     <img src="${joueur.img}" alt="${joueur.nom}">
     <div class="nom">${joueur.nom}</div>
@@ -77,71 +90,39 @@ function createPlayerCard(joueur, isClone = false) {
 
 // Défilement suivant
 function slideNext() {
-  currentIndex = (currentIndex + scrollStep) % joueurs.length;
-  if (isMobile) {
-    smoothScrollToNext();
-  } else {
-    renderCarousel();
-  }
+  currentIndex = (currentIndex + 1) % joueurs.length;
+  updateCarousel();
 }
 
 // Défilement précédent
 function slidePrev() {
-  currentIndex = (currentIndex - scrollStep + joueurs.length) % joueurs.length;
+  currentIndex = (currentIndex - 1 + joueurs.length) % joueurs.length;
+  updateCarousel();
+}
+
+// Va à un slide spécifique
+function goToSlide(index) {
+  currentIndex = index;
+  updateCarousel();
+}
+
+// Met à jour l'affichage du carrousel
+function updateCarousel() {
+  renderCarousel();
+  
+  // Met à jour les points de navigation
   if (isMobile) {
-    smoothScrollToPrev();
-  } else {
-    renderCarousel();
-  }
-}
-
-// Animation fluide pour mobile (suivant)
-function smoothScrollToNext() {
-  if (!carousel) return;
-  
-  const firstChild = carousel.firstElementChild;
-  if (!firstChild) return;
-  
-  const itemWidth = firstChild.offsetWidth + parseInt(window.getComputedStyle(carousel).gap);
-  carousel.style.transition = 'transform 0.5s ease-in-out';
-  carousel.style.transform = `translateX(-${itemWidth * scrollStep}px)`;
-  
-  setTimeout(() => {
-    carousel.style.transition = 'none';
-    carousel.style.transform = 'translateX(0)';
-    currentIndex = (currentIndex + scrollStep) % joueurs.length;
-    renderCarousel();
-  }, 500);
-}
-
-// Animation fluide pour mobile (précédent)
-function smoothScrollToPrev() {
-  if (!carousel) return;
-  
-  // On ajoute temporairement des clones au début
-  for (let i = 1; i <= scrollStep; i++) {
-    const idx = (currentIndex - scrollStep - i + joueurs.length) % joueurs.length;
-    const joueur = joueurs[idx];
-    createPlayerCard(joueur, true);
+    const dots = document.querySelectorAll('.joueur-dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
   }
   
-  // On force un recalcul du layout
-  carousel.offsetHeight;
-  
-  const itemWidth = carousel.firstElementChild.offsetWidth + parseInt(window.getComputedStyle(carousel).gap);
-  carousel.style.transition = 'none';
-  carousel.style.transform = `translateX(-${itemWidth * scrollStep}px)`;
-  
-  // On force un nouveau recalcul
-  carousel.offsetHeight;
-  
-  carousel.style.transition = 'transform 0.5s ease-in-out';
-  carousel.style.transform = 'translateX(0)';
-  
-  setTimeout(() => {
-    currentIndex = (currentIndex - scrollStep + joueurs.length) % joueurs.length;
-    renderCarousel();
-  }, 500);
+  // Réinitialise le timer d'auto-défilement
+  if (isMobile) {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(slideNext, 5000);
+  }
 }
 
 // Configuration du défilement automatique
@@ -152,7 +133,7 @@ function setupAutoSlide() {
   
   // Défilement automatique seulement sur mobile
   if (isMobile) {
-    autoSlideInterval = setInterval(slideNext, 3000);
+    autoSlideInterval = setInterval(slideNext, 5000);
   }
 }
 
@@ -194,7 +175,7 @@ function setupEventListeners() {
   
   // Gestion du redimensionnement
   window.addEventListener('resize', () => {
-    const newIsMobile = window.innerWidth <= 768;
+    const newIsMobile = window.innerWidth <= 900;
     if (newIsMobile !== isMobile) {
       isMobile = newIsMobile;
       currentIndex = 0;

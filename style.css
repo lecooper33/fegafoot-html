@@ -1032,8 +1032,12 @@ header.hide {
   font-size: 60px;
 }
 
+/* Carrousel Joueurs - harmonisé avec la charte FEGAFOOT */
 .equipe-carousel-wrapper {
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .equipe-carousel {
@@ -1041,7 +1045,7 @@ header.hide {
   width: 100%;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 3rem;
+  gap: 2rem;
   min-height: 420px;
   overflow-x: auto;
   padding: 2rem 2rem;
@@ -1061,46 +1065,50 @@ header.hide {
   scrollbar-width: none;
 }
 
-.equipe-carousel img {
-  width: 270px;
-  height: 340px;
-  object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.77,0,0.18,1);
-  scroll-snap-align: start;
-}
-
 .joueur {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  background: var(--panthere-gris);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+  border: 2px solid var(--panthere-or);
   padding-bottom: 0;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s;
   overflow: hidden;
   position: relative;
   flex: 0 0 auto;
   width: 270px;
+  scroll-snap-align: start;
+  margin: 0 auto;
+}
+
+.joueur:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  transform: translateY(-5px) scale(1.03);
+}
+
+.joueur img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
 }
 
 .joueur .nom {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 0;
-  background: #003B7B;
-  color: #fff;
-  padding: 0.5em 0;
-  border-radius: 0 0 5px 5px;
+  background: var(--panthere-bleu-fonce);
+  color: var(--panthere-blanc);
+  padding: 15px 0;
+  border-radius: 0 0 8px 8px;
   width: 100%;
   text-align: center;
   letter-spacing: 1px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   min-height: 60px;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, font-size 0.3s;
   cursor: pointer;
   position: absolute;
   left: 0;
@@ -1108,44 +1116,67 @@ header.hide {
 }
 
 .joueur .nom:hover {
-  background: #0055b8;
-  color: #ffe600;
-  width: 100%;
-  min-height: 100px;
-  font-size: 2.2rem;
-  border-radius: 5px;
+  background: var(--panthere-bleu);
+  color: var(--panthere-or);
+  font-size: 1.7rem;
+  min-height: 80px;
+  border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  transition: ease-in-out 0.3s;
 }
 
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
+/* Dots navigation */
+.joueur-slider-dots {
   display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  padding: 0 1rem;
-  z-index: 5;
+  justify-content: center;
+  padding: 20px 0 0 20px;
 }
 
-.carousel-btn {
-  background: #003B7B;
-  color: #fff;
-  border: 3px solid #ffe600;
+.joueur-dot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  font-size: 2.5rem;
+  background: var(--panthere-texte);
+  margin: 0 5px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s, border 0.2s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  z-index: 6;
+  transition: all 0.3s ease;
 }
 
-.carousel-btn:hover {
-  background: #0055b8;
-  border: 3px solid #fff;
-  transform: scale(1.13);
+.joueur-dot.active {
+  background: var(--panthere-or);
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (min-width: 901px) {
+  .equipe-carousel {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 10px;
+  }
+  .joueur {
+    width: calc(30% - 30px);
+    min-width: 220px;
+    max-width: 300px;
+  }
+  .joueur-slider-dots {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .equipe-carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+  .joueur {
+    min-width: 80%;
+    width: 75vw;
+    margin: 0 10px;
+  }
+  .carousel-controls {
+    display: none;
+  }
 }

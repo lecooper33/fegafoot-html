@@ -45,7 +45,7 @@ const actualites = [
 // Variables pour le slider
 let currentSlide = 0;
 let slideInterval;
-const slideDuration = 5000; // 5 secondes
+const slideDuration = 7000; // 7 secondes
 
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {

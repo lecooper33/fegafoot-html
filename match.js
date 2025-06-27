@@ -96,13 +96,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Variables pour le slider
     let currentSlide = 0;
     let slideInterval;
-    const slideDuration = 5000; // 5 secondes
+    const slideDuration = 7000; // 7 secondes
     let filteredMatches = [];
 
     // Variables pour le slider mobile des matchs
     let matchCurrentSlide = 0;
     let matchSlideInterval;
-    const matchSlideDuration = 5000;
+    const matchSlideDuration = 7000;
 
     // Initialisation
     function init() {
@@ -237,8 +237,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialise le slider mobile
     function initSlider() {
         // Gestion du glissement tactile
-        let touchStartX = 0;
-        let touchEndX = 0;
+        let touchStartX = 1;
+        let touchEndX = 1;
         
         sliderContainer.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;

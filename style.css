@@ -1,13 +1,29 @@
 :root {
-  /* Palette officielle des Panthères du Gabon */
-  --panthere-noir: #000000;
-  --panthere-or: #FFD700;
-  --panthere-vert: #006B3D;
-  --panthere-bleu: #0056B8;
-  --panthere-gris-fonce: #1A1A1A;
-  --panthere-gris-clair: #333333;
+  /* Nouvelle palette sportive et dynamique */
+  --panthere-noir: #0a0a0a;
+  --panthere-or: #FFC72C;
+  --panthere-bleu:#0F47AF;
+  --panthere-bleu-fonce: #003B7B;
   --panthere-blanc: #FFFFFF;
-  --panthere-texte: #F5F5F5;
+  --panthere-texte: #F0F0F0;
+  --panthere-gris: #2D2D2D;
+  --panthere-gris-clair: #4A4A4A;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('fonts/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('fonts/Rajdhani-Medium.woff2') format('woff2'),
+       url('fonts/Rajdhani-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
 }
 
 * {
@@ -17,7 +33,7 @@
 }
 
 body {
-  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-family: 'Rajdhani', Arial, sans-serif;
   background: var(--panthere-noir);
   color: var(--panthere-texte);
   padding-top: 100px;
@@ -26,7 +42,7 @@ body {
 
 /* Header */
 header {
-  background: var(--panthere-gris-fonce);
+  background: var(--panthere-bleu-fonce);
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -70,19 +86,20 @@ nav {
 
 .menu li a {
   color: var(--panthere-blanc);
-  text-decoration: none;
-  font-size: 1.2rem;
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1.1rem;
   padding: 8px 15px;
   border-radius: 6px;
-  transition: all 0.3s ease;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
 }
 
 .menu li a:hover {
-  background: var(--panthere-bleu);
-  color: var(--panthere-or);
-  transform: translateY(-2px);
+  background: var(--panthere-or);
+  color: var(--panthere-bleu-fonce);
 }
 
 .has-submenu {
@@ -93,7 +110,7 @@ nav {
   display: none;
   position: absolute;
   top: 100%;
-  background: var(--panthere-vert);
+  background: var(--panthere-bleu-fonce);
   padding: 10px 0;
   min-width: 200px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -112,18 +129,20 @@ nav {
   color: var(--panthere-blanc);
   text-decoration: none;
   transition: all 0.2s ease;
+  text-transform: none;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .submenu li a:hover {
-  background: var(--panthere-bleu);
-  padding-left: 25px;
+  background: var(--panthere-or);
+  color: var(--panthere-bleu-fonce);
 }
 
 /* Search Bar */
 .search form {
   display: flex;
   align-items: center;
-  background: var(--panthere-gris-clair);
+  background: var(--panthere-gris);
   border-radius: 25px;
   padding: 4px 10px;
   border: 1px solid var(--panthere-or);
@@ -136,6 +155,7 @@ nav {
   color: var(--panthere-blanc);
   padding: 8px;
   width: 150px;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .search button {
@@ -152,7 +172,7 @@ nav {
 
 /* Hero Section */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/6IIJS73SUNCMLPP6KD37HHDIDI.avif);
+  background-image: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)), url(img/6IIJS73SUNCMLPP6KD37HHDIDI.avif);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -175,6 +195,7 @@ nav {
   color: var(--panthere-or);
   text-shadow: 2px 2px 8px var(--panthere-noir);
   letter-spacing: 2px;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .hero p {
@@ -182,6 +203,7 @@ nav {
   color: var(--panthere-blanc);
   max-width: 800px;
   margin: 0 auto;
+  font-weight: 500;
 }
 
 /* Actualités Section */
@@ -201,6 +223,7 @@ nav {
   text-transform: uppercase;
   letter-spacing: 3px;
   position: relative;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .actualites h2::after {
@@ -212,16 +235,23 @@ nav {
   margin: 15px auto;
 }
 
-.actualites-container {
+/* Version Desktop */
+.desktop-view {
   display: flex;
   gap: 30px;
-  height: 80vh;
+  width: 100%;
 }
 
-/* Actualité Principale */
+/* Version Mobile - masquée par défaut */
+.mobile-slider {
+  display: none;
+  width: 100%;
+}
+
+/* Actualité Principale (Desktop) */
 .actu-principale {
   flex: 2;
-  background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
+  background: linear-gradient(145deg, var(--panthere-gris), var(--panthere-noir));
   padding: 30px;
   box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
   display: flex;
@@ -241,8 +271,9 @@ nav {
   color: var(--panthere-or);
   font-size: 2em;
   margin-bottom: 15px;
-  border-bottom: 2px solid var(--panthere-vert);
+  border-bottom: 2px solid var(--panthere-bleu);
   padding-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .actu-principale .date {
@@ -259,15 +290,15 @@ nav {
   color: var(--panthere-texte);
 }
 
-/* Liste des Actualités */
+/* Liste des Actualités (Desktop) */
 .liste-actus {
   flex: 1;
-  background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
+  background: linear-gradient(145deg, var(--panthere-gris), var(--panthere-noir));
   border-radius: 10px;
   padding: 20px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--panthere-or) var(--panthere-vert);
+  scrollbar-color: var(--panthere-or) var(--panthere-bleu);
   border: 1px solid var(--panthere-bleu);
 }
 
@@ -276,7 +307,7 @@ nav {
 }
 
 .liste-actus::-webkit-scrollbar-track {
-  background: var(--panthere-vert);
+  background: var(--panthere-bleu);
   border-radius: 10px;
 }
 
@@ -286,7 +317,7 @@ nav {
 }
 
 .actu-item {
-  background: linear-gradient(to right, var(--panthere-gris-clair), var(--panthere-gris-fonce));
+  background: linear-gradient(to right, var(--panthere-gris-clair), var(--panthere-gris));
   border-left: 4px solid var(--panthere-or);
   padding: 20px;
   margin-bottom: 20px;
@@ -297,13 +328,14 @@ nav {
 
 .actu-item:hover {
   background: var(--panthere-bleu);
-  transform: translateX(5px);
 }
 
 .actu-item h4 {
   color: var(--panthere-or);
   font-size: 1.2em;
   margin-bottom: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
 }
 
 .actu-item p {
@@ -367,7 +399,7 @@ nav {
     padding: 20px;
     width: 100%;
     display: block;
-    border-bottom: 1px solid var(--panthere-vert);
+    border-bottom: 1px solid var(--panthere-bleu);
   }
 
   .burger {
@@ -380,180 +412,9 @@ nav {
     box-shadow: none;
     padding: 0;
     width: 100%;
-    background: var(--panthere-vert);
+    background: var(--panthere-bleu);
   }
 
-  .actualites-container {
-    flex-direction: column;
-    height: auto;
-  }
-  
-  .actu-principale {
-    margin-bottom: 30px;
-  }
-
-  .hero h1 {
-    font-size: 2.5em;
-  }
-
-  .hero p {
-    font-size: 1.2em;
-  }
-}
-
-/* Animation header */
-header.hide {
-  transform: translateY(-100%);
-}
-
-
-.actualites {
-  padding: 60px 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-  background: var(--panthere-noir);
-  border-top: 3px solid var(--panthere-or);
-}
-
-.actualites h2 {
-  color: var(--panthere-or);
-  font-size: 2.8em;
-  margin-bottom: 40px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  position: relative;
-}
-
-.actualites h2::after {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 4px;
-  background: var(--panthere-bleu);
-  margin: 15px auto;
-}
-
-/* Version Desktop */
-.desktop-view {
-  display: flex;
-  gap: 30px;
-  width: 100%;
-}
-
-/* Version Mobile - masquée par défaut */
-.mobile-slider {
-  display: none;
-  width: 100%;
-}
-
-/* Actualité Principale (Desktop) */
-.actu-principale {
-  flex: 2;
-  background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
-  padding: 30px;
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--panthere-or);
-}
-
-.actu-principale img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  margin-bottom: 25px;
-  border: 3px solid var(--panthere-bleu);
-}
-
-.actu-principale h3 {
-  color: var(--panthere-or);
-  font-size: 2em;
-  margin-bottom: 15px;
-  border-bottom: 2px solid var(--panthere-vert);
-  padding-bottom: 10px;
-}
-
-.actu-principale .date {
-  color: var(--panthere-or);
-  margin-bottom: 20px;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.actu-principale .contenu {
-  line-height: 1.7;
-  font-size: 1.1em;
-  flex-grow: 1;
-  color: var(--panthere-texte);
-}
-
-/* Liste des Actualités (Desktop) */
-.liste-actus {
-  flex: 1;
-  background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
-  border-radius: 10px;
-  padding: 20px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--panthere-or) var(--panthere-vert);
-  border: 1px solid var(--panthere-bleu);
-}
-
-.liste-actus::-webkit-scrollbar {
-  width: 8px;
-}
-
-.liste-actus::-webkit-scrollbar-track {
-  background: var(--panthere-vert);
-  border-radius: 10px;
-}
-
-.liste-actus::-webkit-scrollbar-thumb {
-  background-color: var(--panthere-or);
-  border-radius: 10px;
-}
-
-.actu-item {
-  background: linear-gradient(to right, var(--panthere-gris-clair), var(--panthere-gris-fonce));
-  border-left: 4px solid var(--panthere-or);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 0 8px 8px 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.actu-item:hover {
-  background: var(--panthere-bleu);
-  transform: translateX(5px);
-}
-
-.actu-item h4 {
-  color: var(--panthere-or);
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.actu-item p {
-  color: var(--panthere-texte);
-  font-size: 0.9em;
-  margin-bottom: 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.actu-item .date {
-  color: var(--panthere-or);
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
   .desktop-view {
     display: none;
   }
@@ -562,16 +423,11 @@ header.hide {
     display: block !important;
   }
   
-  .actualites-container {
-    flex-direction: column;
-    height: auto;
-  }
-  
   .actualites h2 {
     font-size: 2em;
   }
   
-  /* Ajout pour le slider mobile actualités */
+  /* Slider mobile actualités */
   #actualites-slider-container {
     display: flex;
     overflow-x: auto;
@@ -594,7 +450,7 @@ header.hide {
     scroll-snap-align: start;
     flex-shrink: 0;
     width: 100%;
-    background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
+    background: linear-gradient(145deg, var(--panthere-gris), var(--panthere-noir));
     padding: 1.5rem;
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
     border: 1px solid var(--panthere-or);
@@ -611,6 +467,7 @@ header.hide {
     color: var(--panthere-or);
     font-size: 1.5em;
     margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
   }
   #actualites-slider-container .slide .date {
     color: var(--panthere-or);
@@ -636,249 +493,517 @@ header.hide {
     background: var(--panthere-or);
     transform: scale(1.2);
   }
+
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+  }
 }
 
-/* section calendrier */
-:root {
-    /* Palette officielle des Panthères du Gabon */
-    --panthere-noir: #000000;
-    --panthere-or: #FFD700;
-    --panthere-vert: #006B3D;
-    --panthere-bleu: #0056B8;
-    --panthere-gris-fonce: #1A1A1A;
-    --panthere-gris-clair: #333333;
-    --panthere-blanc: #FFFFFF;
-    --panthere-texte: #F5F5F5;
+/* Animation header */
+header.hide {
+  transform: translateY(-100%);
 }
 
+/* Section Calendrier */
 .calendrier {
-    width: 100%;
-    min-height: 70vh;
-    padding: 2rem;
-    background-color: var(--panthere-gris-fonce);
-    color: var(--panthere-texte);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-top: 3px solid var(--panthere-or);
+  width: 100%;
+  min-height: 70vh;
+  padding: 4rem 2rem;
+  background-color: var(--panthere-noir);
+  color: var(--panthere-texte);
+  font-family: 'Rajdhani', sans-serif;
+  border-top: 3px solid var(--panthere-or);
 }
 
 .calendrier h1 {
-    color: var(--panthere-or);
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    font-weight: 600;
+  color: var(--panthere-or);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  font-weight: 600;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .calendrier h1::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4rem;
-    height: 3px;
-    background: var(--panthere-bleu);
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 3px;
+  background: var(--panthere-bleu);
 }
 
 .filtres {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .btn-filtre {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 1.5rem;
-    background-color: var(--panthere-gris-clair);
-    color: var(--panthere-texte);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: var(--panthere-bleu-fonce);
+  color: var(--panthere-texte);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid transparent;
 }
 
 .btn-filtre:hover, .btn-filtre.active {
-    background-color: var(--panthere-or);
-    color: var(--panthere-noir);
-    font-weight: 500;
+  background-color: var(--panthere-or);
+  color: var(--panthere-noir);
+  border-color: var(--panthere-or);
 }
 
 /* Version Desktop calendrier */
 .match-desktop-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .match-card {
-    background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
-    border: 1px solid var(--panthere-or);
-    transition: transform 0.3s ease;
+  background: linear-gradient(145deg, var(--panthere-gris), var(--panthere-noir));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--panthere-or);
+  transition: transform 0.3s ease;
 }
 
 .match-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .info-match {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .match-title {
-    color: var(--panthere-or);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--panthere-vert);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  color: var(--panthere-or);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--panthere-bleu);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .match-title .competition {
-    font-size: 0.7rem;
-    background: var(--panthere-vert);
-    color: var(--panthere-blanc);
-    padding: 0.2rem 0.6rem;
-    border-radius: 1rem;
-    text-transform: uppercase;
+  font-size: 0.7rem;
+  background: var(--panthere-bleu);
+  color: var(--panthere-blanc);
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .equipes {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 .equipe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
 .equipe img {
-    width: 3rem;
-    height: 3rem;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
 }
 
 .vs {
-    font-weight: bold;
-    color: var(--panthere-or);
-    font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--panthere-or);
+  font-size: 1.1rem;
 }
 
-.match {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.8rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--panthere-gris-clair);
-    font-size: 0.9rem;
+.match-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--panthere-gris-clair);
+  font-size: 0.9rem;
 }
 
-.match:last-child {
-    border-bottom: none;
+.match-info:last-child {
+  border-bottom: none;
 }
 
-.match span:first-child {
-    color: var(--panthere-or);
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.iconify {
-    font-size: 1.1rem;
-    color: var(--panthere-or);
+.match-info span:first-child {
+  color: var(--panthere-or);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 /* Version Mobile calendrier */
 .match-mobile-slider {
-    display: none;
-    width: 100%;
+  display: none;
+  width: 100%;
 }
 
 .match-slider-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-    height: 100%;
-    position: relative;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .match-slider-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .match-slide {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 100%;
-    background: linear-gradient(145deg, var(--panthere-gris-fonce), var(--panthere-noir));
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
-    border: 1px solid var(--panthere-or);
-    margin-right: 1rem;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 100%;
+  background: linear-gradient(145deg, var(--panthere-gris), var(--panthere-noir));
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+  border: 1px solid var(--panthere-or);
+  margin-right: 1rem;
 }
 
 .match-slide .info-match {
-    padding: 0;
+  padding: 0;
 }
 
 .match-slider-dots {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
 }
 
 .match-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--panthere-texte);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--panthere-texte);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .match-dot.active {
-    background: var(--panthere-or);
-    transform: scale(1.2);
+  background: var(--panthere-or);
+  transform: scale(1.2);
 }
 
 @media (max-width: 900px) {
-    .match-desktop-view {
-        display: none;
-    }
-    .match-mobile-slider {
-        display: block;
-    }
-    
-    .calendrier h1 {
-        font-size: 2rem;
-    }
-    
-    .btn-filtre {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
+  .match-desktop-view {
+    display: none;
+  }
+  .match-mobile-slider {
+    display: block;
+  }
+  
+  .calendrier h1 {
+    font-size: 2rem;
+  }
+  
+  .btn-filtre {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Section À propos */
+.about-section {
+  background-color: var(--panthere-noir);
+  padding: 4rem 2rem;
+  color: var(--panthere-texte);
+  border-top: 3px solid var(--panthere-or);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  color: var(--panthere-or);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+.about-section h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--panthere-bleu);
+  margin: 15px auto 0;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.about-text ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.about-text li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.about-text li::before {
+  content: "•";
+  color: var(--panthere-or);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.president-card {
+  width: 300px;
+  background: linear-gradient(145deg, var(--panthere-gris), var(--panthere-noir));
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--panthere-or);
+}
+
+.president-image {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+
+.president-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.president-info h3 {
+  color: var(--panthere-or);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.president-info p {
+  color: var(--panthere-texte);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Galerie */
+.gallery-section {
+  margin-top: 3rem;
+}
+
+.gallery-section h3 {
+  color: var(--panthere-or);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  aspect-ratio: 1;
+  border: 2px solid var(--panthere-bleu);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .president-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.a-propos-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.president {
+  background-image: url(img/pierre-allain2.webp);
+  background-size: cover;
+  background-position: center;
+  width: 100%;  
+  min-height: 350px;
+  height: 350px;
+  border-radius: 3px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.a-propos h2{
+  text-align: center;
+  font-size: 50px;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  
+}
+.president-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 1.2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.7s cubic-bezier(.4,1.7,.6,1), opacity 0.5s;
+  z-index: 2;
+}
+.text-apropos{
+  width: 100%;
+}
+.president:hover .president-overlay,
+.president:focus-within .president-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Mobile : overlay toujours visible et positionné */
+@media (max-width: 900px) {
+  .president-overlay {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto;
+    position: static;
+    margin: 1.5rem auto 0 auto;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .president {
+    min-height: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/* Responsive a-propos */
+@media (max-width: 900px) {
+  .a-propos-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .a-propos {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+  .president {
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+  }
 }

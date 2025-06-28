@@ -30,3 +30,14 @@ window.addEventListener('scroll', () => {
   }
   lastScroll = currentScroll;
 });
+
+// Transparence du header quand on est en haut de la page
+function updateHeaderTransparency() {
+  if (window.scrollY < 10) {
+    header.classList.add('header-transparent');
+  } else {
+    header.classList.remove('header-transparent');
+  }
+}
+window.addEventListener('scroll', updateHeaderTransparency);
+window.addEventListener('DOMContentLoaded', updateHeaderTransparency);

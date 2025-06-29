@@ -1,0 +1,367 @@
+:root {
+  /* Nouvelle palette sportive et dynamique */
+  --panthere-noir: #0a0a0a;
+  --panthere-or: #FFC72C;
+  --panthere-bleu:#0F47AF;
+  --panthere-bleu-fonce: #003B7B;
+  --panthere-blanc: #FFFFFF;
+  --panthere-texte: #F0F0F0;
+  --panthere-gris: #2D2D2D;
+  --panthere-gris-clair: #4A4A4A;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('fonts/BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('fonts/Rajdhani-Medium.woff2') format('woff2'),
+       url('fonts/Rajdhani-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+.titre{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--panthere-or);
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.selections{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.filter-buttons{
+ margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+ width: 80%;
+}
+button{
+  background-color: var(--panthere-bleu-fonce);
+  color: var(--panthere-blanc);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+   font-family: 'Titillium Web', sans-serif;
+}
+button:hover{
+  background-color: var(--panthere-bleu);
+}
+.grid-joueur{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.descriptions-1 ,
+.descriptions-2 ,
+.descriptions-3 ,
+.descriptions-4 ,
+.descriptions-5 ,
+.descriptions-6 ,
+.descriptions-7 ,
+.descriptions-8 ,
+.descriptions-9 ,
+.descriptions-10 ,
+.descriptions-11 ,
+.descriptions-12 ,
+.descriptions-13 ,
+.descriptions-14 ,
+.descriptions-15 ,
+.descriptions-16 ,
+.descriptions-17 ,
+.descriptions-18 ,
+.descriptions-19 ,
+.descriptions-20 ,
+.descriptions-21 {
+  width: 100%;
+  text-align: center;
+  position: relative;;
+}
+.nom {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--panthere-or);
+  text-align: center;
+  margin-top: 10px;
+}
+/* background image */
+.descriptions-1{
+  background-image: url("../img-eqipe/AAron-Appidangoye.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-2{
+  background-image: url("../img-eqipe/Anse-Ngoubi.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-3{
+  background-image: url("../img-eqipe/Jack-Risonga.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-4{
+  background-image: url("../img-eqipe/Junior-Fotso.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-5{
+  background-image: url("../img-eqipe/Michel-Mboula.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-6{
+  background-image: url("../img-eqipe/Mario-Lemina.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-7{
+  background-image: url("../img-eqipe/Allan-do-marcolino.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-8{
+  background-image: url("../img-eqipe/Bruno-eccuele.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-9{
+  background-image: url("../img-eqipe/Johann-Obiang.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-10{
+  background-image: url("../img-eqipe/Denis-Bouanga.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-11{
+  background-image: url("../img-eqipe/Jim-Allevinah.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-12{
+  background-image: url("../img-eqipe/Guelor-Kanga.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-13{
+  background-image: url("../img-eqipe/Shavy-Babicka.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-14{
+  background-image: url("../img-eqipe/Alex-Moucketou.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-15{
+  background-image: url("../img-eqipe/AAron-Appidangoye.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-16{
+  background-image: url("../img-eqipe/Medwin-Bithegue.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-17{
+  background-image: url("../img-eqipe/Loyce-Mbaba.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-18{
+  background-image: url("../img-eqipe/David-Sambissa.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-19{
+  background-image: url("../img-eqipe/Sidney-Obissa.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-20{
+  background-image: url("../img-eqipe/Anthony-Oyono.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+.descriptions-21{
+  background-image: url("../img-eqipe/Jeremi-Oyono.jpeg");
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+
+}
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+.descriptions-1 ,
+.descriptions-2 ,
+.descriptions-3 ,
+.descriptions-4 ,
+.descriptions-5 ,
+.descriptions-6 ,
+.descriptions-7 ,
+.descriptions-8 ,
+.descriptions-9 ,
+.descriptions-10 ,
+.descriptions-11 ,
+.descriptions-12 ,
+.descriptions-13 ,
+.descriptions-14 ,
+.descriptions-15 ,
+.descriptions-16 ,
+.descriptions-17 ,
+.descriptions-18 ,
+.descriptions-19 ,
+.descriptions-20 ,
+.descriptions-21{
+  font-weight: 600;
+  font-family: 'titillium web', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 40px;
+}
+.intro {
+  font-family: 'Titillium Web', sans-serif;
+  color: var(--panthere-texte);
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.note-filtre {
+  color: var(--panthere-texte);
+  font-size: 14px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.grid-joueur > div {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-joueur > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Icônes à côté des rôles */
+.bottom span .iconify {
+  vertical-align: middle;
+  margin-right: 6px;
+  color: var(--panthere-or);
+}
+
+/* Centrage des icônes avec le texte sur les boutons et les cartes joueurs */
+.btns-filtre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.btns-filtre .iconify {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+.grid-joueur .bottom span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+}
+
+.grid-joueur .iconify {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+/* Animation entrée */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation filtre (à utiliser avec JS) */
+.hidden {
+  opacity: 0 !important;
+  transform: scale(0.9);
+  pointer-events: none;
+}

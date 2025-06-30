@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compétitions Internationales - Fegafoot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/competition-international.css">
+</head>
+<body>
+  <!-- HEADER -->
+     <header>
+    <div class="logo">
+      <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot" />
+    </div>
+    <button class="burger" aria-label="Ouvrir le menu">
+      <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
+    </button>
+    <nav>
+      <ul class="menu">
+        <li><a href="#Accueil">Accueil</a></li>
+        <li class="has-submenu">
+          <a href="#">Équipes</a>
+          <ul class="submenu">
+            <li><a href="equipe-M.html">Masculins</a></li>
+            <li><a href="#feminin">Féminin</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Compétitions</a>
+          <ul class="submenu">
+            <li><a href="competition.html">Nationales</a></li>
+            <li><a href="#Competition-international.html">Internationales</a></li>
+          </ul>
+        </li>
+         <li><a href="fegafoot-tv.html">Fegafoot-tv</a></li>
+      </ul>
+    </nav>
+    <div class="search">
+      <form action="#" method="get">
+        <input type="text" placeholder="Rechercher..." name="search" />
+        <button type="submit" aria-label="Rechercher">
+          <span class="iconify" data-icon="mdi:magnify" data-width="22" data-height="22"></span>
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <main class="international-page">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Compétitions Internationales</h1>
+        <p>Les Panthères du Gabon sur la scène footballistique mondiale</p>
+      </div>
+    </section>
+
+    <section class="competition-tabs">
+      <div class="container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="senior-a">Équipe A</button>
+          <button class="tab-btn" data-tab="olympique">Olympique</button>
+          <button class="tab-btn" data-tab="jeunes">Équipes Jeunes</button>
+          <button class="tab-btn" data-tab="feminine">Équipe Féminine</button>
+          <button class="tab-btn" data-tab="clubs">Clubs en CAF</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="competition-content">
+      <div class="container">
+        <!-- EQUIPE A -->
+        <div id="senior-a" class="tab-content active">
+          <h2 class="section-title">Équipe Nationale A - Les Panthères</h2>
+          
+          <div class="competition-intro">
+            <div class="team-banner">
+              <img src="img/equipe-a.jpg" alt="Équipe Nationale du Gabon">
+              <div class="team-info">
+                <div class="fifa-ranking">
+                  <span>Classement FIFA</span>
+                  <strong>86ème</strong>
+                  <small>(Mars 2024)</small>
+                </div>
+                <div class="coach">
+                  <span>Entraîneur</span>
+                  <strong>Patrice Neveu</strong>
+                </div>
+                <div class="captain">
+                  <span>Capitaine</span>
+                  <strong>Pierre-Emerick Aubameyang</strong>
+                </div>
+              </div>
+            </div>
+            <p class="team-description">
+              Les Panthères du Gabon représentent le pays dans les compétitions internationales depuis 1962. 
+              L'équipe a participé à 8 éditions de la Coupe d'Afrique des Nations et a atteint les quarts de 
+              finale à plusieurs reprises. Le Gabon a co-organisé la CAN 2012 et 2017.
+            </p>
+          </div>
+
+          <div class="competition-grid">
+            <div class="competition-card">
+              <div class="competition-header">
+                <img src="img/can.jpg" alt="Coupe d'Afrique des Nations">
+                <div class="competition-info">
+                  <h3>Coupe d'Afrique des Nations</h3>
+                  <div class="meta">
+                    <span><i class="fas fa-calendar-alt"></i> Prochaine édition: 2025</span>
+                    <span><i class="fas fa-trophy"></i> Participation: 8 fois</span>
+                  </div>
+                </div>
+              </div>
+              <div class="competition-body">
+                <div class="performance">
+                  <h4>Dernière performance</h4>
+                  <div class="stage">
+                    <span>CAN 2021</span>
+                    <span>Huitièmes de finale</span>
+                  </div>
+                </div>
+                <div class="history">
+                  <h4>Meilleures performances</h4>
+                  <ul class="achievements">
+                    <li>Quarts de finale (1996, 2012, 2021)</li>
+                    <li>Phase de groupes (1994, 2000, 2010, 2015, 2017)</li>
+                    <li>Co-organisateur (2012, 2017)</li>
+                  </ul>
+                </div>
+                <div class="next-match">
+                  <h4>Prochain match de qualification</h4>
+                  <div class="match-fixture">
+                    <div class="team">
+                      <img src="img/gabon-flag.png" alt="Gabon">
+                      <span>Gabon</span>
+                    </div>
+                    <div class="vs">
+                      <span>VS</span>
+                      <span class="date">8 juin 2024</span>
+                      <span>Éliminatoires CAN 2025</span>
+                    </div>
+                    <div class="team">
+                      <img src="img/kenya-flag.png" alt="Kenya">
+                      <span>Kenya</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="competition-card">
+              <div class="competition-header">
+                <img src="img/wc-qualifiers.jpg" alt="Éliminatoires Coupe du Monde">
+                <div class="competition-info">
+                  <h3>Éliminatoires Coupe du Monde</h3>
+                  <div class="meta">
+                    <span><i class="fas fa-calendar-alt"></i> Édition: 2026</span>
+                    <span><i class="fas fa-globe"></i> Participation: 0 fois</span>
+                  </div>
+                </div>
+              </div>
+              <div class="competition-body">
+                <div class="current-campaign">
+                  <h4>Campagne en cours</h4>
+                  <div class="group-table">
+                    <h5>Groupe F</h5>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Pos</th>
+                          <th>Équipe</th>
+                          <th>Pts</th>
+                          <th>J</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Côte d'Ivoire</td>
+                          <td>9</td>
+                          <td>4</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Gabon</td>
+                          <td>7</td>
+                          <td>4</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Kenya</td>
+                          <td>4</td>
+                          <td>4</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Gambie</td>
+                          <td>3</td>
+                          <td>4</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="next-fixtures">
+                  <h4>Prochains matches</h4>
+                  <div class="fixture">
+                    <span>5 sept 2024</span>
+                    <span>Gabon vs Côte d'Ivoire</span>
+                  </div>
+                  <div class="fixture">
+                    <span>10 sept 2024</span>
+                    <span>Gambie vs Gabon</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OLYMPIQUE -->
+        <div id="olympique" class="tab-content">
+          <h2 class="section-title">Équipe Olympique (U23)</h2>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img/olympique-team.jpg" alt="Équipe Olympique">
+              <div class="competition-info">
+                <h3>Tournoi Olympique de Football</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Prochain tournoi: Paris 2024</span>
+                  <span><i class="fas fa-trophy"></i> Participation: 0 fois</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <div class="qualification">
+                <h4>Éliminatoires CAF U23</h4>
+                <p>Les Panthères U23 tentent de se qualifier pour leur première participation aux Jeux Olympiques.</p>
+                
+                <div class="match-results">
+                  <div class="result">
+                    <div class="teams">
+                      <span>Gabon U23</span>
+                      <span>2 - 1</span>
+                      <span>Burkina Faso U23</span>
+                    </div>
+                    <span class="date">23 mars 2024</span>
+                  </div>
+                  <div class="result">
+                    <div class="teams">
+                      <span>Burkina Faso U23</span>
+                      <span>1 - 1</span>
+                      <span>Gabon U23</span>
+                    </div>
+                    <span class="date">26 mars 2024</span>
+                  </div>
+                </div>
+                
+                <div class="next-round">
+                  <h5>Prochain tour</h5>
+                  <p>Phase finale - Tournoi de qualification CAF (Novembre 2024)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EQUIPES JEUNES -->
+        <div id="jeunes" class="tab-content">
+          <h2 class="section-title">Équipes Nationales Jeunes</h2>
+          
+          <div class="competition-grid">
+            <div class="competition-card">
+              <div class="competition-header">
+                <img src="img/u20-team.jpg" alt="Équipe U20">
+                <div class="competition-info">
+                  <h3>Coupe d'Afrique U20</h3>
+                  <div class="meta">
+                    <span><i class="fas fa-calendar-alt"></i> Prochaine édition: 2025</span>
+                    <span><i class="fas fa-trophy"></i> Participation: 3 fois</span>
+                  </div>
+                </div>
+              </div>
+              <div class="competition-body">
+                <div class="performance">
+                  <h4>Dernière performance</h4>
+                  <p>Éliminatoires - Tour préliminaire (2023)</p>
+                </div>
+                <div class="best-performance">
+                  <h4>Meilleure performance</h4>
+                  <p>Phase de groupes (2011, 2013)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="competition-card">
+              <div class="competition-header">
+                <img src="img/u17-team.jpg" alt="Équipe U17">
+                <div class="competition-info">
+                  <h3>Coupe d'Afrique U17</h3>
+                  <div class="meta">
+                    <span><i class="fas fa-calendar-alt"></i> Prochaine édition: 2025</span>
+                    <span><i class="fas fa-trophy"></i> Participation: 2 fois</span>
+                  </div>
+                </div>
+              </div>
+              <div class="competition-body">
+                <div class="performance">
+                  <h4>Dernière performance</h4>
+                  <p>Non qualifié (2023)</p>
+                </div>
+                <div class="best-performance">
+                  <h4>Meilleure performance</h4>
+                  <p>Phase de groupes (2007, 2009)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTBALL FEMININ -->
+        <div id="feminine" class="tab-content">
+          <h2 class="section-title">Équipe Nationale Féminine</h2>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img/feminine-team.jpg" alt="Équipe Féminine">
+              <div class="competition-info">
+                <h3>Coupe d'Afrique Féminine</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Prochaine édition: 2024</span>
+                  <span><i class="fas fa-trophy"></i> Participation: 0 fois</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <div class="qualification">
+                <h4>Éliminatoires CAN Féminine 2024</h4>
+                <p>Les Panthères Féminines tentent de se qualifier pour leur première CAN.</p>
+                
+                <div class="match-results">
+                  <div class="result">
+                    <div class="teams">
+                      <span>Gabon</span>
+                      <span>0 - 2</span>
+                      <span>Cameroun</span>
+                    </div>
+                    <span class="date">18 sept 2023</span>
+                  </div>
+                  <div class="result">
+                    <div class="teams">
+                      <span>Cameroun</span>
+                      <span>2 - 0</span>
+                      <span>Gabon</span>
+                    </div>
+                    <span class="date">26 sept 2023</span>
+                  </div>
+                </div>
+                
+                <div class="next-objective">
+                  <h5>Objectif suivant</h5>
+                  <p>Première qualification pour une phase finale de CAN Féminine</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CLUBS EN CAF -->
+        <div id="clubs" class="tab-content">
+          <h2 class="section-title">Clubs Gabonais en Compétitions CAF</h2>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img/caf-club.jpg" alt="Compétitions CAF">
+              <div class="competition-info">
+                <h3>Saison 2023-2024</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Saison en cours</span>
+                  <span><i class="fas fa-trophy"></i> 3 clubs engagés</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <div class="clubs-performance">
+                <h4>Performances des clubs</h4>
+                
+                <div class="club-result">
+                  <div class="club-info">
+                    <img src="img/mangasport-logo.png" alt="AS Mangasport">
+                    <div>
+                      <h5>AS Mangasport</h5>
+                      <span>Ligue des Champions CAF</span>
+                    </div>
+                  </div>
+                  <div class="result">
+                    <span>Éliminé au tour préliminaire</span>
+                    <span>par Al Ahly Tripoli (Libye)</span>
+                  </div>
+                </div>
+                
+                <div class="club-result">
+                  <div class="club-info">
+                    <img src="img/mounana-logo.png" alt="CF Mounana">
+                    <div>
+                      <h5>CF Mounana</h5>
+                      <span>Coupe de la Confédération</span>
+                    </div>
+                  </div>
+                  <div class="result">
+                    <span>Éliminé au 2ème tour</span>
+                    <span>par DC Motema Pembe (RDC)</span>
+                  </div>
+                </div>
+                
+                <div class="club-result">
+                  <div class="club-info">
+                    <img src="img/bitam-logo.png" alt="US Bitam">
+                    <div>
+                      <h5>US Bitam</h5>
+                      <span>Coupe de la Confédération</span>
+                    </div>
+                  </div>
+                  <div class="result">
+                    <span>En compétition</span>
+                    <span>Phase de groupes en cours</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="historical-performance">
+                <h4>Meilleures performances historiques</h4>
+                <ul class="achievements">
+                  <li><strong>AS Mangasport</strong> - 1/4 de finale Coupe de la Confédération 2015</li>
+                  <li><strong>US Bitam</strong> - Phase de groupes Ligue des Champions 2012</li>
+                  <li><strong>Missile FC</strong> - 1/8 de finale Coupe de la Confédération 2010</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legends-section">
+      <div class="container">
+        <h2 class="section-title">Légendes des Panthères</h2>
+        <div class="legends-grid">
+          <div class="legend-card">
+            <img src="img-eqipe/aubame.webp" alt="Pierre-Emerick Aubameyang">
+            <div class="legend-info">
+              <h3>Pierre-Emerick Aubameyang</h3>
+              <p>Recordman de buts (30)</p>
+              <p>Capitaine 2015-2022</p>
+              <p>Meilleur joueur africain 2015</p>
+            </div>
+          </div>
+          <div class="legend-card">
+            <img src="img-eqipe/daniel-cousin.jpg" alt="Daniel Cousin">
+            <div class="legend-info">
+              <h3>Daniel Cousin</h3>
+              <p>Record de sélections (68)</p>
+              <p>But historique en CAN 2012</p>
+              <p>Légende de Rangers FC</p>
+            </div>
+          </div>
+          <div class="legend-card">
+            <img src="img-eqipe/Ecuele-manga.jpg" alt="Bruno Ecuele Manga">
+            <div class="legend-info">
+              <h3>Bruno Ecuele Manga</h3>
+              <p>Défenseur emblématique</p>
+              <p>100 matchs en Premier League</p>
+              <p>Pilier 2007-2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <p>Liens rapides</p>
+      <a href="#Accueil">Accueil</a>
+      <a href="#actualites">Actualités</a>
+      <a href="#equipes">Équipes</a>
+      <a href="#calendrier">Calendrier</a>
+      <a href="#partenaires">Partenaires</a>
+    </div>
+    
+    <div class="logo-2">
+      <img src="img/FEGA.png" alt="Logo de la FEGAFOOT">
+    </div>
+    
+    <div class="footer-social">
+      <p>Suivez-nous</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/fegafoot" target="_blank" rel="noopener noreferrer">
+          <span class="iconify" data-icon="mdi:facebook"></span>
+        </a>
+        <a href="https://twitter.com/fegafoot" target="_blank" rel="noopener noreferrer">
+          <span class="iconify" data-icon="mdi:twitter"></span>
+        </a>
+        <a href="https://www.instagram.com/fegafoot/" target="_blank" rel="noopener noreferrer">
+          <span class="iconify" data-icon="mdi:instagram"></span>
+        </a>
+        <a href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" rel="noopener noreferrer">
+          <span class="iconify" data-icon="mdi:youtube"></span>
+        </a>
+        <a href="#">
+          <span class="iconify" data-icon="mdi:whatsapp"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright">
+    <p>&copy; 2025 FEGAFOOT TOUS DROITS RESERVES</p>
+  </div>
+</footer>
+  <script src="script.js"></script>
+  <script src="js/international.js"></script>
+</body>
+</html>

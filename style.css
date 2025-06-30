@@ -150,7 +150,6 @@ nav {
   align-items: center;
   background: var(--panthere-gris);
   border-radius: 25px;
-  padding: 4px 10px;
   border: 1px solid var(--panthere-or);
 }
 
@@ -158,14 +157,14 @@ nav {
   background: transparent;
   border: none;
   outline: none;
+  padding: 0 0 0 15px;
   color: var(--panthere-blanc);
-  padding: 8px;
-  width: 150px;
+  width: 100%;
   font-family: 'Rajdhani', sans-serif;
 }
 
 .search button {
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   color: var(--panthere-or);
@@ -174,6 +173,7 @@ nav {
 
 .search button:hover {
   transform: scale(1.1);
+  background-color: transparent;
 }
 
 /* Hero Section */
@@ -196,7 +196,23 @@ nav {
   z-index: 0;
   pointer-events: none;
 }
-
+.has-submenu{
+ font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+}
+.menu{
+  display: flex;
+  align-items: center;
+}
+li a {
+text-decoration: none;
+}
+.has-submenu:hover {
+  background-color: var(--panthere-or);
+  padding: 05px ;
+  color: var(--panthere-bleu-fonce);
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -635,6 +651,7 @@ header.hide {
 
 .info-match {
   padding: 1.5rem;
+  border-radius: 3px;
 }
 
 .match-title {

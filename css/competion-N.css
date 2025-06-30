@@ -149,14 +149,16 @@ header {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 5px;
 }
 
 .tab-btn {
   background: none;
+  border-radius: 4px;
   border: none;
   color: var(--panthere-texte);
-  padding: 15px 25px;
-  font-family: 'Bebas Neue', sans-serif;
+  padding: 12px 15px;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 1.2rem;
   letter-spacing: 1px;
   cursor: pointer;
@@ -179,6 +181,7 @@ header {
 .tab-btn:hover,
 .tab-btn.active {
   color: var(--panthere-or);
+  background-color: rgba(255,255,255,0.1);
 }
 
 .tab-btn.active:after,

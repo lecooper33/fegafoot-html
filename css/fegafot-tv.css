@@ -1,0 +1,124 @@
+/* css/style.css */
+:root {
+  --panthere-noir: #0a0a0a;
+  --panthere-or: #FFC72C;
+  --panthere-bleu: #0F47AF;
+  --panthere-bleu-fonce: #003B7B;
+  --panthere-blanc: #FFFFFF;
+  --panthere-texte: #F0F0F0;
+  --panthere-gris: #2D2D2D;
+  --panthere-gris-clair: #4A4A4A;
+}
+
+body {
+  margin: 0;
+  background: var(--panthere-noir);
+  color: var(--panthere-texte);
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* ... votre CSS d'en-tête, menu, etc. ... */
+
+.fegafoot-tv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.fegafoot-tv h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  color: var(--panthere-or);
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.p1, .p2 {
+  max-width: 800px;
+  text-align: center;
+  margin: .5rem auto;
+}
+
+.video-conteneur {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.video-principale {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--panthere-gris);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-principale iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.video-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--panthere-gris-clair);
+  border-radius: 5px;
+  scroll-behavior: smooth;
+}
+
+.video-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 200px;
+  aspect-ratio: 16/9;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* overlay titre */
+.video-title {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  background: rgba(0,0,0,0.7);
+  color: var(--panthere-blanc);
+  text-align: center;
+  padding: 0.25rem;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.video-item:hover .video-title {
+  opacity: 1;
+}
+
+/* mobile : titre toujours visible */
+@media (max-width: 768px) {
+  .video-title {
+    opacity: 1;
+    left: 0;
+    width: 100%;
+  }
+}
+
+/* Responsive : adapter la liste */
+@media (max-width: 600px) {
+  .video-list {
+    gap: 0.25rem;
+  }
+  .video-item {
+    width: 140px;
+  }
+}

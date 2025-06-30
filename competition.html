@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compétitions Nationales - Fegafoot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-    <title>competition-national</title>
+  <link rel="stylesheet" href="css/competion-N.css">
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
 </head>
 <body>
-      <header>
+  <!-- HEADER -->
+  <header>
     <div class="logo">
       <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot" />
     </div>
@@ -17,7 +21,7 @@
     </button>
     <nav>
       <ul class="menu">
-        <li><a href="#Accueil">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li class="has-submenu">
           <a href="#">Équipes</a>
           <ul class="submenu">
@@ -28,10 +32,11 @@
         <li class="has-submenu">
           <a href="#">Compétitions</a>
           <ul class="submenu">
-            <li><a href="#competition">Nationales</a></li>
-            <li><a href="#competitions-internationales">Internationales</a></li>
+            <li><a href="competition.html">Nationales</a></li>
+            <li><a href="#internationales">Internationales</a></li>
           </ul>
         </li>
+        <li><a href="fegafoot-tv.html">Fegafoot-tv</a></li>
       </ul>
     </nav>
     <div class="search">
@@ -43,10 +48,428 @@
       </form>
     </div>
   </header>
-  <section class="Match-national">
+
+  <main class="competitions-page">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Compétitions Nationales</h1>
+        <p>Découvrez toutes les compétitions de football organisées au Gabon par la FEGAFOOT</p>
+      </div>
+    </section>
+
+    <section class="competition-tabs">
+      <div class="container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="championnats">Championnats</button>
+          <button class="tab-btn" data-tab="coupes">Coupes</button>
+          <button class="tab-btn" data-tab="jeunes">Compétitions jeunes</button>
+          <button class="tab-btn" data-tab="feminines">Football féminin</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="competition-content">
+      <div class="container">
+        <!-- CHAMPIONNATS -->
+        <div id="championnats" class="tab-content active">
+          <h2 class="section-title">Championnats Nationaux</h2>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img-eqipe/WhatsApp-Image-2024-06-07-a-15.16.57_cbeca2a5 (1).jpeg" alt="Trophée D1">
+              <div class="competition-info">
+                <h3>Championnat National D1</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Saison 2023-2024</span>
+                  <span><i class="fas fa-trophy"></i> 16 clubs</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Stade de l'Amitié, Libreville</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <p>Le championnat de première division gabonaise, appelé "Championnat National D1", est la plus haute compétition de football au Gabon. Créé en 1968, il oppose les 16 meilleurs clubs du pays sur une saison de septembre à juin.</p>
+              
+              <div class="competition-stats">
+                <div class="stat-box">
+                  <h4>Club le plus titré</h4>
+                  <p>AS Mangasport (12 titres)</p>
+                </div>
+                <div class="stat-box">
+                  <h4>Champion en titre</h4>
+                  <p>CF Mounana (2022-2023)</p>
+                </div>
+                <div class="stat-box">
+                  <h4>Meilleur buteur historique</h4>
+                  <p>Pierre-Emerick Aubameyang (25 buts)</p>
+                </div>
+              </div>
+              
+              <div class="current-standings">
+                <h4>Classement actuel</h4>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Pos</th>
+                      <th>Club</th>
+                      <th>Pts</th>
+                      <th>J</th>
+                      <th>V</th>
+                      <th>N</th>
+                      <th>D</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>AS Mangasport</td>
+                      <td>32</td>
+                      <td>14</td>
+                      <td>10</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>CF Mounana</td>
+                      <td>30</td>
+                      <td>14</td>
+                      <td>9</td>
+                      <td>3</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>US Bitam</td>
+                      <td>28</td>
+                      <td>14</td>
+                      <td>8</td>
+                      <td>4</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Missile FC</td>
+                      <td>25</td>
+                      <td>14</td>
+                      <td>7</td>
+                      <td>4</td>
+                      <td>3</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="#" class="btn">Voir le classement complet</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img-eqipe/WhatsApp-Image-2024-06-07-a-15.16.57_cbeca2a5 (1).jpeg" alt="Trophée D2">
+              <div class="competition-info">
+                <h3>Championnat National D2</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Saison 2023-2024</span>
+                  <span><i class="fas fa-trophy"></i> 24 clubs (2 poules)</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Stades régionaux</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <p>La deuxième division gabonaise est le tremplin vers l'élite. Les clubs sont répartis en deux poules géographiques (Nord et Sud) avec des matches aller-retour. Les deux premiers de chaque poule accèdent à la D1, tandis que les derniers sont relégués.</p>
+              
+              <div class="promotion-zone">
+                <h4>Zone de promotion</h4>
+                <div class="teams-grid">
+                  <div class="team-card">
+                    <img src="logo-equipe/FC-OYEM.jpeg" alt="Équipe 1">
+                    <p>FC Oyem</p>
+                    <span>Poule Nord - 1er</span>
+                  </div>
+                  <div class="team-card">
+                    <img src="logo-equipe/AS-PELICAN.jpeg" alt="Équipe 2">
+                    <p>AS Pélican</p>
+                    <span>Poule Nord - 2ème</span>
+                  </div>
+                  <div class="team-card">
+                    <img src="logo-equipe/STADE-MANDJI.jpeg" alt="Équipe 3">
+                    <p>Stade Mandji</p>
+                    <span>Poule Sud - 1er</span>
+                  </div>
+                  <div class="team-card">
+                    <img src="logo-equipe/FC-PORTGENTIL.png" alt="Équipe 4">
+                    <p>FC Port-Gentil</p>
+                    <span>Poule Sud - 2ème</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- COUPES -->
+        <div id="coupes" class="tab-content">
+          <h2 class="section-title">Coupes Nationales</h2>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img/coupes.jpg" alt="Coupe du Gabon">
+              <div class="competition-info">
+                <h3>Coupe du Gabon Interclubs</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Édition 2024</span>
+                  <span><i class="fas fa-trophy"></i> 64 clubs</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Tournoi à élimination directe</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <p>La Coupe du Gabon est la plus ancienne compétition à élimination directe du pays, ouverte à tous les clubs licenciés. Le vainqueur se qualifie pour la Coupe de la Confédération Africaine (CAF).</p>
+              
+              <div class="current-phase">
+                <h4>Phase actuelle : Quarts de finale</h4>
+                <div class="matches-grid">
+                  <div class="match-card">
+                    <div class="teams">
+                      <div class="team">
+                        <img src="logo-equipe/AS-MANGASPORT.webp" alt="Équipe A">
+                        <span>AS Mangasport</span>
+                      </div>
+                      <div class="score">2 - 1</div>
+                      <div class="team">
+                        <img src="logo-equipe/US_Bitam.png" alt="Équipe B">
+                        <span>US Bitam</span>
+                      </div>
+                    </div>
+                    <div class="match-info">
+                      <span><i class="fas fa-calendar"></i> 15 mars 2024</span>
+                      <span><i class="fas fa-map-marker-alt"></i> Stade de Franceville</span>
+                    </div>
+                  </div>
+                  
+                  <div class="match-card upcoming">
+                    <div class="teams">
+                      <div class="team">
+                        <img src="logo-equipe/FC-MOUNANA.jpeg" alt="Équipe C">
+                        <span>CF Mounana</span>
+                      </div>
+                      <div class="score">vs</div>
+                      <div class="team">
+                        <img src="logo-equipe/MISSILE-FC.png" alt="Équipe D">
+                        <span>Missile FC</span>
+                      </div>
+                    </div>
+                    <div class="match-info">
+                      <span><i class="fas fa-calendar"></i> 22 mars 2024</span>
+                      <span><i class="fas fa-map-marker-alt"></i> Stade de l'Amitié</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="btn">Voir tous les résultats</a>
+              </div>
+              
+              <div class="previous-winners">
+                <h4>Derniers vainqueurs</h4>
+                <div class="winners-timeline">
+                  <div class="winner">
+                    <span class="year">2023</span>
+                    <img src="logo-equipe/AS-MANGASPORT.webp" alt="Vainqueur 2023">
+                    <span>AS Mangasport</span>
+                  </div>
+                  <div class="winner">
+                    <span class="year">2022</span>
+                    <img src="logo-equipe/US_Bitam.png" alt="Vainqueur 2022">
+                    <span>US Bitam</span>
+                  </div>
+                  <div class="winner">
+                    <span class="year">2021</span>
+                    <img src="logo-equipe/FC-MOUNANA.jpeg" alt="Vainqueur 2021">
+                    <span>CF Mounana</span>
+                  </div>
+                  <div class="winner">
+                    <span class="year">2020</span>
+                    <img src="logo-equipe/MISSILE-FC.png" alt="Vainqueur 2020">
+                    <span>Missile FC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img/supercoupe.jpg" alt="Supercoupe">
+              <div class="competition-info">
+                <h3>Supercoupe du Gabon</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Édition 2024</span>
+                  <span><i class="fas fa-trophy"></i> Champion D1 vs Vainqueur Coupe</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Match unique</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <p>La Supercoupe oppose en début de saison le champion de D1 au vainqueur de la Coupe du Gabon. C'est le premier trophée officiel de la saison qui donne le ton des compétitions à venir.</p>
+              
+              <div class="next-edition">
+                <h4>Prochaine édition</h4>
+                <div class="match-preview">
+                  <div class="team">
+                    <img src="logo-equipe/FC-MOUNANA.jpeg" alt="CF Mounana">
+                    <span>CF Mounana</span>
+                    <small>Champion D1 2023</small>
+                  </div>
+                  <div class="vs">
+                    <span>VS</span>
+                    <span class="date">Août 2024</span>
+                  </div>
+                  <div class="team">
+                    <img src="logo-equipe/AS-MANGASPORT.webp" alt="AS Mangasport">
+                    <span>AS Mangasport</span>
+                    <small>Vainqueur Coupe 2023</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- COMPETITIONS JEUNES -->
+        <div id="jeunes" class="tab-content">
+          <h2 class="section-title">Compétitions Jeunes</h2>
+          
+          <div class="competition-grid">
+            <div class="competition-card small">
+              <div class="competition-header">
+                <img src="img/u20.jpg" alt="U20">
+                <h3>Championnat National U20</h3>
+              </div>
+              <div class="competition-body">
+                <p>Compétition phare pour les jeunes talents gabonais âgés de 17 à 20 ans. Les meilleurs joueurs sont repérés pour intégrer les sélections nationales.</p>
+                <div class="meta">
+                  <span><i class="fas fa-calendar"></i> Saison 2023-2024</span>
+                  <span><i class="fas fa-users"></i> 12 équipes</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="competition-card small">
+              <div class="competition-header">
+                <img src="img/u17.jpg" alt="U17">
+                <h3>Championnat National U17</h3>
+              </div>
+              <div class="competition-body">
+                <p>Compétition réservée aux jeunes de 15 à 17 ans, véritable vivier pour le football gabonais de demain.</p>
+                <div class="meta">
+                  <span><i class="fas fa-calendar"></i> Saison 2023-2024</span>
+                  <span><i class="fas fa-users"></i> 16 équipes</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="competition-card small">
+              <div class="competition-header">
+                <img src="img/coupe-jeunes.jpg" alt="Coupe Jeunes">
+                <h3>Coupe Nationale des Jeunes</h3>
+              </div>
+              <div class="competition-body">
+                <p>Tournoi à élimination directe qui regroupe les meilleurs centres de formation du pays.</p>
+                <div class="meta">
+                  <span><i class="fas fa-calendar"></i> Édition 2024</span>
+                  <span><i class="fas fa-users"></i> 32 équipes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- FOOTBALL FEMININ -->
+        <div id="feminines" class="tab-content">
+          <h2 class="section-title">Football Féminin</h2>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img/feminine.jpg" alt="Football Féminin">
+              <div class="competition-info">
+                <h3>Championnat National Féminin</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Saison 2024</span>
+                  <span><i class="fas fa-trophy"></i> 10 clubs</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Stades régionaux</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <p>Le championnat féminin gabonais connaît un essor important depuis 2015. La compétition permet de développer le football féminin et de détecter les futures internationales.</p>
+              
+              <div class="current-leaders">
+                <h4>Leader actuel</h4>
+                <div class="team-leader">
+                  <img src="img/trophe-feminin.jpg" alt="Vickos FC">
+                  <div class="team-info">
+                    <h5>Vickos FC</h5>
+                    <div class="stats">
+                      <span><i class="fas fa-star"></i> 5 titres</span>
+                      <span><i class="fas fa-futbol"></i> 25 buts marqués</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="competition-card">
+            <div class="competition-header">
+              <img src="img/coupe-feminin2.webp" alt="Coupe Féminine">
+              <div class="competition-info">
+                <h3>Coupe du Gabon Féminine</h3>
+                <div class="meta">
+                  <span><i class="fas fa-calendar-alt"></i> Édition 2024</span>
+                  <span><i class="fas fa-trophy"></i> 16 clubs</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Tournoi à élimination directe</span>
+                </div>
+              </div>
+            </div>
+            <div class="competition-body">
+              <p>La coupe féminine permet aux équipes de toutes les régions de s'affronter dans un tournoi passionnant qui attire de plus en plus de spectateurs.</p>
+              
+              <div class="next-round">
+                <h4>Prochain tour</h4>
+                <div class="match-fixture">
+                  <div class="team">
+                    <img src="logo-equipe/AMANI-FC.jpeg" alt="Amani FC">
+                    <span>Amani FC</span>
+                  </div>
+                  <div class="vs">
+                    <span>VS</span>
+                    <span class="date">15 avril 2024</span>
+                  </div>
+                  <div class="team">
+                    <img src="logo-equipe/LES-PANTHERES.png" alt="Les Panthères">
+                    <span>Les Panthères</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
-  </section>
-  <footer>
+    <section class="partners">
+      <div class="container">
+        <h3>Partenaires Officiels</h3>
+        <div class="partners-grid">
+          <img src="img/partner1.png" alt="Partenaire 1">
+          <img src="img/partner2.png" alt="Partenaire 2">
+          <img src="img/partner3.png" alt="Partenaire 3">
+          <img src="img/partner4.png" alt="Partenaire 4">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+<footer>
   <div class="footer-container">
     <div class="footer-links">
       <p>Liens rapides</p>
@@ -87,7 +510,26 @@
     <p>&copy; 2025 FEGAFOOT TOUS DROITS RESERVES</p>
   </div>
 </footer>
-  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
   <script src="script.js"></script>
+  <script>
+    // Gestion des onglets
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.getAttribute('data-tab');
+        
+        // Retirer active de tous les boutons et contenus
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Ajouter active au bouton et contenu cliqué
+        btn.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>

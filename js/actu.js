@@ -5,7 +5,7 @@ const actualites = [
         titre: "Victoire historique contre le Cameroun",
         texte: "Les Panthères du Gabon ont créé la surprise en battant les Lions Indomptables 2-1 lors du match amical.",
         date: "28 Juin 2025",
-        image: "https://via.placeholder.com/800x450/003366/FFFFFF?text=Gabon-Cameroun",
+        image: "actu-image/gabon-vs-camer.avif",
         contenu: "Dans un stade d'Angondjé en effervescence, les Panthères du Gabon ont offert une prestation remarquable pour battre leurs voisins camerounais. Les buts ont été marqués par Aubameyang (23e) et Bouanga (67e). Cette victoire marque un tournant pour la sélection gabonaise qui prépare activement les éliminatoires de la CAN 2025. Le sélectionneur a salué 'l'esprit combatif et la discipline tactique' de son équipe."
     },
     {
@@ -21,7 +21,7 @@ const actualites = [
         titre: "Stage intensif des U17",
         texte: "Les espoirs du football gabonais entament un stage de préparation de 2 semaines à Libreville.",
         date: "15 Juin 2025",
-        image: "https://via.placeholder.com/800x450/003366/FFFFFF?text=U17-Gabon",
+        image: "actu-image/U17-1.jpeg",
         contenu: "25 jeunes joueurs ont été convoqués pour un stage intensif en vue du prochain championnat d'Afrique junior. Le sélectionneur des U17, Jean-Claude Darcheville, a insisté sur l'importance de ce rassemblement : 'Nous voulons construire une génération compétitive qui pourra intégrer l'équipe A dans les années à venir.' Le programme inclut des séances techniques le matin et des matchs amicaux l'après-midi."
     },
     {
@@ -37,8 +37,16 @@ const actualites = [
         titre: "Nouveau centre de formation",
         texte: "Inauguration du Centre d'Excellence des Panthères à Libreville.",
         date: "5 Juin 2025",
-        image: "https://via.placeholder.com/800x450/003366/FFFFFF?text=Centre-Formation",
+        image: "actu-image/centre.jpg",
         contenu: "Le Gabon se dote d'un centre de formation ultramoderne dédié au football. Financé en partie par la FIFA, ce complexe de 15 hectares comprend 4 terrains, un internat et un centre médical. 'C'est un rêve qui se réalise pour le football gabonais', a déclaré le président de la Fégafoot. Les premières promotions accueilleront 120 jeunes dès la rentrée prochaine."
+    },
+    {
+        id: 6,
+        titre: "Match amical contre le Maroc",
+        texte: "Les Panthères affronteront les Lions de l'Atlas le 30 Juin à Rabat.",
+        date: "1er Juin 2025",
+        image: "actu-image/gabon-vs-maroc.jpg",
+        contenu: "Dans le cadre de leur préparation pour les éliminatoires de la CAN, les Panthères du Gabon disputeront un match amical contre le Maroc. Le sélectionneur a convoqué une liste élargie de 30 joueurs pour cette rencontre qui se déroulera au complexe sportif Prince Moulay Abdellah. 'C'est une belle occasion de jauger notre niveau face à une équipe de haut niveau', a-t-il déclaré."
     }
 ];
 

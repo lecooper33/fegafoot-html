@@ -118,7 +118,7 @@ header {
 
 /* HERO SECTION */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/hero-competitions.jpg');
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0, 0, 0, 0.251)), url('../video/stade-gabon.jpg');
   background-size: cover;
   background-position: center;
   color: var(--panthere-blanc);
@@ -177,7 +177,18 @@ header {
   background: var(--panthere-or);
   transition: width 0.3s;
 }
-
+.maillot{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--panthere-gris-clair);
+}
+.maillot img {
+  width: 100%;
+  height: 100%;
+object-fit: cover;
+}
 .tab-btn:hover,
 .tab-btn.active {
   color: var(--panthere-or);
@@ -335,18 +346,15 @@ tr:hover {
   padding: 15px;
   border-radius: 6px;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team-card:hover {
   transform: translateY(-5px);
 }
 
-.team-card img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
 
 .matches-grid {
   display: grid;
@@ -379,11 +387,7 @@ tr:hover {
   flex: 1;
 }
 
-.team img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 5px;
-}
+
 
 .score {
   font-weight: bold;
@@ -412,11 +416,7 @@ tr:hover {
   min-width: 100px;
 }
 
-.winner img {
-  width: 50px;
-  height: 50px;
-  margin: 10px 0;
-}
+
 
 .year {
   font-weight: bold;

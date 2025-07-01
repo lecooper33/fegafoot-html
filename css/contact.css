@@ -1,0 +1,235 @@
+:root {
+    --panthere-noir: #0a0a0a;
+    --panthere-or: #FFC72C;
+    --panthere-bleu: #0F47AF;
+    --panthere-bleu-fonce: #003B7B;
+    --panthere-blanc: #FFFFFF;
+    --panthere-texte: #F0F0F0;
+    --panthere-gris: #2D2D2D;
+    --panthere-gris-clair: #4A4A4A;
+}
+
+/* Polices */
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../fonts/BebasNeue-Regular.woff2') format('woff2'),
+         url('../fonts/BebasNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('../fonts/Rajdhani-Medium.woff2') format('woff2'),
+         url('../fonts/Rajdhani-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Base */
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: var(--panthere-noir);
+    color: var(--panthere-texte);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero */
+.contact-hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--panthere-bleu-fonce) 0%, var(--panthere-bleu) 100%);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    color: var(--panthere-blanc);
+}
+
+.contact-hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Contenu principal */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Section informations */
+.contact-info {
+    background-color: var(--panthere-gris);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contact-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--panthere-or);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-card {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--panthere-gris-clair);
+}
+
+.info-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.info-card i {
+    color: var(--panthere-or);
+    font-size: 1.5rem;
+    margin-top: 0.3rem;
+}
+
+.info-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--panthere-blanc);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.info-card p, .info-card a {
+    color: var(--panthere-texte);
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.info-card a:hover {
+    color: var(--panthere-or);
+    text-decoration: none;
+}
+
+/* Formulaire */
+.contact-form-section {
+    background-color: var(--panthere-gris);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contact-form-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--panthere-or);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: 'Titillium Web', sans-serif;
+    color: var(--panthere-blanc);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--panthere-gris-clair);
+    border-radius: 5px;
+    background-color: var(--panthere-noir);
+    color: var(--panthere-texte);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--panthere-or);
+}
+
+.submit-btn {
+    background-color: var(--panthere-or);
+    color: var(--panthere-noir);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--panthere-bleu);
+    color: var(--panthere-blanc);
+}
+
+/* Carte */
+.contact-map {
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .contact-hero {
+        padding: 2rem 1rem;
+    }
+
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+
+    .contact-info,
+    .contact-form-section {
+        padding: 1.5rem;
+    }
+}

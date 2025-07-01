@@ -1,43 +1,55 @@
-// Menu burger
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('nav');
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+// Toggle menu mobile
 burger.addEventListener('click', () => {
   nav.classList.toggle('open');
   burger.classList.toggle('open');
 });
 
-// Sous-menus sur mobile
-document.querySelectorAll('.has-submenu > a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    if (window.innerWidth <= 700) {
-      e.preventDefault();
-      this.parentElement.classList.toggle('open');
-    }
+// Toggle sous-menu
+submenuToggles.forEach(toggle => {
+  toggle.addEventListener('click', (e) => {
+    const parent = toggle.closest('.has-submenu');
+    parent.classList.toggle('show');
+
+    // Ferme les autres sous-menus
+    document.querySelectorAll('.has-submenu').forEach(item => {
+      if (item !== parent) item.classList.remove('show');
+    });
+
+    e.stopPropagation();
   });
 });
 
-// Animation header : cacher au scroll vers le bas, montrer au scroll vers le haut
+// Ferme sous-menus si clic à l'extérieur
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('nav')) {
+    document.querySelectorAll('.has-submenu').forEach(item => {
+      item.classList.remove('show');
+    });
+  }
+});
+
+// Gestion de l'affichage du header selon le scroll
 let lastScroll = 0;
 const header = document.querySelector('header');
+
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
-  if (currentScroll > lastScroll && currentScroll > 50) {
-    // Scroll vers le bas
+  if (currentScroll <= 0) {
+    header.classList.remove('hide');
+    header.classList.add('transparent');
+    return;
+  }
+  header.classList.remove('transparent');
+  if (currentScroll > lastScroll) {
+    // Scroll vers le bas : cacher le header
     header.classList.add('hide');
   } else {
-    // Scroll vers le haut
+    // Scroll vers le haut : montrer le header
     header.classList.remove('hide');
   }
   lastScroll = currentScroll;
 });
-
-// Transparence du header quand on est en haut de la page
-function updateHeaderTransparency() {
-  if (window.scrollY < 10) {
-    header.classList.add('header-transparent');
-  } else {
-    header.classList.remove('header-transparent');
-  }
-}
-window.addEventListener('scroll', updateHeaderTransparency);
-window.addEventListener('DOMContentLoaded', updateHeaderTransparency);

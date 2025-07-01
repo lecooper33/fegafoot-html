@@ -11,42 +11,36 @@
 </head>
 <body>
   <!-- HEADER -->
-     <header>
-    <div class="logo">
-      <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot" />
-    </div>
-    <button class="burger" aria-label="Ouvrir le menu">
-      <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
-    </button>
-    <nav>
-      <ul class="menu">
-        <li><a href="#Accueil">Accueil</a></li>
-        <li class="has-submenu">
-          <a href="#">Équipes</a>
-          <ul class="submenu">
-            <li><a href="equipe-M.html">Masculins</a></li>
-            <li><a href="#feminin">Féminin</a></li>
-          </ul>
-        </li>
-        <li class="has-submenu">
-          <a href="#">Compétitions</a>
-          <ul class="submenu">
-            <li><a href="competition.html">Nationales</a></li>
-            <li><a href="#Competition-international.html">Internationales</a></li>
-          </ul>
-        </li>
-         <li><a href="fegafoot-tv.html">Fegafoot-tv</a></li>
-      </ul>
-    </nav>
-    <div class="search">
-      <form action="#" method="get">
-        <input type="text" placeholder="Rechercher..." name="search" />
-        <button type="submit" aria-label="Rechercher">
-          <span class="iconify" data-icon="mdi:magnify" data-width="22" data-height="22"></span>
-        </button>
-      </form>
-    </div>
-  </header>
+  <header>
+  <div class="logo">
+    <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot">
+  </div>
+  <button class="burger" aria-label="Menu">
+    <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
+  </button>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Équipes</button>
+        <ul class="submenu">
+          <li><a href="equipe-M.html">Masculins</a></li>
+          <li><a href="#feminin">Féminin</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Compétitions</button>
+        <ul class="submenu">
+          <li><a href="competition.html">Nationales</a></li>
+          <li><a href="Competition-international.html">Internationales</a></li>
+        </ul>
+      </li>
+      <li><a href="fegafoot-tv.html">Fegafoot-TV</a></li>
+      <li><a href="photo.html">Photos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main class="international-page">
     <section class="hero">
@@ -76,7 +70,7 @@
           
           <div class="competition-intro">
             <div class="team-banner">
-              <img src="img/equipe-a.jpg" alt="Équipe Nationale du Gabon">
+              <div class="maillot"><img src="img-eqipe/Pantere-caf-logo.png" alt="Équipe Nationale du Gabon"></div>
               <div class="team-info">
                 <div class="fifa-ranking">
                   <span>Classement FIFA</span>
@@ -103,7 +97,7 @@
           <div class="competition-grid">
             <div class="competition-card">
               <div class="competition-header">
-                <img src="img/can.jpg" alt="Coupe d'Afrique des Nations">
+                <img src="img-partenaire/caf.png" alt="Coupe d'Afrique des Nations">
                 <div class="competition-info">
                   <h3>Coupe d'Afrique des Nations</h3>
                   <div class="meta">
@@ -132,7 +126,7 @@
                   <h4>Prochain match de qualification</h4>
                   <div class="match-fixture">
                     <div class="team">
-                      <img src="img/gabon-flag.png" alt="Gabon">
+                      <div class="maillot"><img src="img-eqipe/Pantere-caf-logo.png" alt="Gabon"></div>
                       <span>Gabon</span>
                     </div>
                     <div class="vs">
@@ -141,7 +135,7 @@
                       <span>Éliminatoires CAN 2025</span>
                     </div>
                     <div class="team">
-                      <img src="img/kenya-flag.png" alt="Kenya">
+                     <div class="maillot"><img src="img-eqipe/Kenya.svg" alt="Kenya"></div>
                       <span>Kenya</span>
                     </div>
                   </div>
@@ -151,7 +145,7 @@
 
             <div class="competition-card">
               <div class="competition-header">
-                <img src="img/wc-qualifiers.jpg" alt="Éliminatoires Coupe du Monde">
+                <img src="img-partenaire/Fifa.jpg" alt="Éliminatoires Coupe du Monde">
                 <div class="competition-info">
                   <h3>Éliminatoires Coupe du Monde</h3>
                   <div class="meta">
@@ -225,7 +219,7 @@
           
           <div class="competition-card">
             <div class="competition-header">
-              <img src="img/olympique-team.jpg" alt="Équipe Olympique">
+              <img src="actu-image/olypiques.webp" alt="Équipe Olympique">
               <div class="competition-info">
                 <h3>Tournoi Olympique de Football</h3>
                 <div class="meta">
@@ -274,7 +268,7 @@
           <div class="competition-grid">
             <div class="competition-card">
               <div class="competition-header">
-                <img src="img/u20-team.jpg" alt="Équipe U20">
+                <img src="actu-image/can_u20.jpg" alt="Équipe U20">
                 <div class="competition-info">
                   <h3>Coupe d'Afrique U20</h3>
                   <div class="meta">
@@ -297,7 +291,7 @@
 
             <div class="competition-card">
               <div class="competition-header">
-                <img src="img/u17-team.jpg" alt="Équipe U17">
+                <img src="actu-image/can-u17-12.webp" alt="Équipe U17">
                 <div class="competition-info">
                   <h3>Coupe d'Afrique U17</h3>
                   <div class="meta">
@@ -326,7 +320,7 @@
           
           <div class="competition-card">
             <div class="competition-header">
-              <img src="img/feminine-team.jpg" alt="Équipe Féminine">
+              <img src="actu-image/CAN_2022-feminines.jpg" alt="Équipe Féminine">
               <div class="competition-info">
                 <h3>Coupe d'Afrique Féminine</h3>
                 <div class="meta">
@@ -374,7 +368,7 @@
           
           <div class="competition-card">
             <div class="competition-header">
-              <img src="img/caf-club.jpg" alt="Compétitions CAF">
+              <img src="actu-image/CafCupslogo.webp" alt="Compétitions CAF">
               <div class="competition-info">
                 <h3>Saison 2023-2024</h3>
                 <div class="meta">
@@ -403,7 +397,8 @@
                 
                 <div class="club-result">
                   <div class="club-info">
-                    <img src="img/mounana-logo.png" alt="CF Mounana">
+                    <div class="maillot"> <img src="logo-equipe/FC-MOUNANA.jpeg" alt="CF Mounana"></div>
+                   
                     <div>
                       <h5>CF Mounana</h5>
                       <span>Coupe de la Confédération</span>
@@ -417,7 +412,8 @@
                 
                 <div class="club-result">
                   <div class="club-info">
-                    <img src="img/bitam-logo.png" alt="US Bitam">
+                    <div class="maillot">                    <img src="logo-equipe/US_Bitam.png" alt="US Bitam">
+</div>
                     <div>
                       <h5>US Bitam</h5>
                       <span>Coupe de la Confédération</span>
@@ -482,50 +478,36 @@
   </main>
 
   <!-- FOOTER -->
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-links">
-      <p>Liens rapides</p>
-      <a href="#Accueil">Accueil</a>
-      <a href="#actualites">Actualités</a>
-      <a href="#equipes">Équipes</a>
-      <a href="#calendrier">Calendrier</a>
-      <a href="#partenaires">Partenaires</a>
-    </div>
-    
-    <div class="logo-2">
-      <img src="img/FEGA.png" alt="Logo de la FEGAFOOT">
-    </div>
-    
-    <div class="footer-social">
-      <p>Suivez-nous</p>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/fegafoot" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:facebook"></span>
-        </a>
-        <a href="https://twitter.com/fegafoot" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:twitter"></span>
-        </a>
-        <a href="https://www.instagram.com/fegafoot/" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:instagram"></span>
-        </a>
-        <a href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:youtube"></span>
-        </a>
-        <a href="#">
-          <span class="iconify" data-icon="mdi:whatsapp"></span>
-        </a>
-      </div>
+  <footer>
+  <div class="logo-2">
+    <img src="img/FEGA.png" alt="Logo de la FEGAFOOT">
+  </div>
+  <div class="footer-social">
+    <p>Suivez-nous</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/fegafoot" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:facebook"></span>
+      </a>
+      <a href="https://twitter.com/fegafoot" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:twitter"></span>
+      </a>
+      <a href="https://www.instagram.com/fegafoot/" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:instagram"></span>
+      </a>
+      <a href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:youtube"></span>
+      </a>
+      <a href="#">
+        <span class="iconify" data-icon="mdi:whatsapp"></span>
+      </a>
     </div>
   </div>
-  
   <div class="copyright">
     <p>&copy; 2025 FEGAFOOT TOUS DROITS RESERVES</p>
   </div>
 </footer>
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   <script src="script.js"></script>
-  <script src="js/international.js"></script>
+<script src="js/international.js"></script>
 </body>
 </html>

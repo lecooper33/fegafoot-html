@@ -9,52 +9,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot" />
-    </div>
-    <button class="burger" aria-label="Ouvrir le menu">
-      <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
-    </button>
-    <nav>
-      <ul class="menu">
-        <li><a href="#Accueil">Accueil</a></li>
-        <li class="has-submenu">
-          Équipes
-          <ul class="submenu">
-            <li><a href="equipe-M.html">Masculins</a></li>
-            <li><a href="#feminin">Féminin</a></li>
-          </ul>
-        </li>
-        <li class="has-submenu">
-          Compétitions
-          <ul class="submenu">
-            <li><a href="competition.html">Nationales</a></li>
-            <li><a href="Competition-international.html">Internationales</a></li>
-          </ul>
-        </li>
-         <li><a href="fegafoot-tv.html">Fegafoot-tv</a></li>
-      </ul>
-    </nav>
-    <div class="search">
-      <form action="#" method="get">
-        <input type="text" placeholder="Rechercher..." name="search" />
-        <button type="submit" aria-label="Rechercher">
-          <span class="iconify" data-icon="mdi:magnify" data-width="22" data-height="22"></span>
-        </button>
-      </form>
-    </div>
-  </header>
+<header>
+  <div class="logo">
+    <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot">
+  </div>
+  <button class="burger" aria-label="Menu">
+    <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
+  </button>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Équipes</button>
+        <ul class="submenu">
+          <li><a href="equipe-M.html">Masculins</a></li>
+          <li><a href="#feminin">Féminin</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Compétitions</button>
+        <ul class="submenu">
+          <li><a href="competition.html">Nationales</a></li>
+          <li><a href="Competition-international.html">Internationales</a></li>
+        </ul>
+      </li>
+      <li><a href="fegafoot-tv.html">Fegafoot-TV</a></li>
+      <li><a href="photo.html">Photos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <section class="hero" id="Accueil">
     <video class="hero-bg-video" autoplay loop muted playsinline>
       <source src="video/gabon.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la vidéo.
     </video>
-    <div class="hero-content">
-      <h1>Bienvenue sur le site de la Fegafoot</h1>
-      <p>Découvrez les dernières actualités du football Gabonais, les équipes, les compétitions et bien plus encore.</p>
-    </div>
+    <div class="hero-content"></div>
   </section>
 <!-- sections actualites -->
 <section class="actualites" id="actualites">
@@ -64,7 +56,9 @@
         <div class="desktop-view">
             <div class="actu-principale" id="actu-principale">
                 <!-- Contenu généré par JS -->
+                
             </div>
+
             <div class="liste-actus" id="liste-actus">
                 <!-- Liste générée par JS -->
             </div>
@@ -78,6 +72,9 @@
                 <!-- Points de navigation générés par JS -->
             </div>
         </div>
+                     <a href="actualite.html">
+                  <button class="voir-plus">Voir plus <span class="iconify" data-icon="mdi:chevron-right" data-width="16" data-height="16"></span></button>
+                 </a>
     </div>
 </section>
     <!-- calendrier des match -->
@@ -129,17 +126,24 @@ La Fegafoot œuvre chaque jour pour élever le football gabonais aux plus hauts 
               </div>
              </div>
     </section>
+    <div class="plus">
+     <a href="a-propos.html"><button class="btn-apropos">En savoir plus</button></a>
+
+    </div>
 <section class="equipe">
   <h2>Notre sélection</h2>
   <div class="equipe-carousel-wrapper">
     <div class="carousel-controls">
-      <button class="carousel-btn" id="carousel-prev">←</button>
-      <button class="carousel-btn" id="carousel-next">→</button>
+      <button class="carousel-btn" id="carousel-prev"><span class="iconify" data-icon="mdi:chevron-left"></span></button>
+      <button class="carousel-btn" id="carousel-next"><span class="iconify" data-icon="mdi:chevron-right"></span></button>
     </div>
     <div class="equipe-carousel">
       <!-- Le carrousel sera généré dynamiquement par equipes.js -->
     </div>
   </div>
+  <a href="equipe-M.html">
+    <button class="btn-equipe">Voir l'équipe masculine</button>
+  </a>
 </section>
 
 <section class="partenaires">
@@ -162,6 +166,7 @@ La Fegafoot œuvre chaque jour pour élever le football gabonais aux plus hauts 
     </div>
   </div>
 </section>
+
 <footer>
   <div class="footer-container">
     <div class="footer-links">

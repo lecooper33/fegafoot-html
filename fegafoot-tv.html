@@ -15,37 +15,31 @@
     <div class="logo">
       <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot">
     </div>
-    <button class="burger" aria-label="Ouvrir le menu">
+    <button class="burger" aria-label="Menu">
       <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
     </button>
     <nav>
       <ul class="menu">
         <li><a href="index.html">Accueil</a></li>
         <li class="has-submenu">
-          <a href="#">Équipes</a>
+          <button class="submenu-toggle">Équipes</button>
           <ul class="submenu">
             <li><a href="equipe-M.html">Masculins</a></li>
             <li><a href="#feminin">Féminin</a></li>
           </ul>
         </li>
         <li class="has-submenu">
-          <a href="#">Compétitions</a>
+          <button class="submenu-toggle">Compétitions</button>
           <ul class="submenu">
             <li><a href="competition.html">Nationales</a></li>
             <li><a href="Competition-international.html">Internationales</a></li>
           </ul>
         </li>
-        <li><a href="#fegafoot-tv">Fegafoot-tv</a></li>
+        <li><a href="fegafoot-tv.html">Fegafoot-TV</a></li>
+        <li><a href="photo.html">Photos</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div class="search">
-      <form action="#" method="get">
-        <input type="text" placeholder="Rechercher..." name="search">
-        <button type="submit" aria-label="Rechercher">
-          <span class="iconify" data-icon="mdi:magnify" data-width="22" data-height="22"></span>
-        </button>
-      </form>
-    </div>
   </header>
 
   <section class="fegafoot-tv" id="fegafoot-tv">
@@ -87,49 +81,38 @@
     </div>
   </section>
 
-<footer>
-  <div class="footer-container">
-    <div class="footer-links">
-      <p>Liens rapides</p>
-      <a href="#Accueil">Accueil</a>
-      <a href="#actualites">Actualités</a>
-      <a href="#equipes">Équipes</a>
-      <a href="#calendrier">Calendrier</a>
-      <a href="#partenaires">Partenaires</a>
-    </div>
-    
-    <div class="logo-2">
-      <img src="img/FEGA.png" alt="Logo de la FEGAFOOT">
-    </div>
-    
-    <div class="footer-social">
-      <p>Suivez-nous</p>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/fegafoot" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:facebook"></span>
-        </a>
-        <a href="https://twitter.com/fegafoot" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:twitter"></span>
-        </a>
-        <a href="https://www.instagram.com/fegafoot/" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:instagram"></span>
-        </a>
-        <a href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:youtube"></span>
-        </a>
-        <a href="#">
-          <span class="iconify" data-icon="mdi:whatsapp"></span>
-        </a>
-      </div>
+  <footer>
+  <div class="logo-2">
+    <img src="img/FEGA.png" alt="Logo de la FEGAFOOT">
+  </div>
+  <div class="footer-social">
+    <p>Suivez-nous</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/fegafoot" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:facebook"></span>
+      </a>
+      <a href="https://twitter.com/fegafoot" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:twitter"></span>
+      </a>
+      <a href="https://www.instagram.com/fegafoot/" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:instagram"></span>
+      </a>
+      <a href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:youtube"></span>
+      </a>
+      <a href="#">
+        <span class="iconify" data-icon="mdi:whatsapp"></span>
+      </a>
     </div>
   </div>
-  
   <div class="copyright">
     <p>&copy; 2025 FEGAFOOT TOUS DROITS RESERVES</p>
   </div>
 </footer>
   <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   <script src="script.js"></script>
-  <script src="js/video.js"></script>
+  <script src="./js/actu.js"></script>
+  <script src="./js/match.js"></script>
+  <script src="./js/equipes.js"></script>
 </body>
 </html>

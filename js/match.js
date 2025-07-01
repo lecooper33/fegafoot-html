@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "15/06/2024",
             equipeA: {
                 nom: "AS Mangasport",
-                logo: "https://via.placeholder.com/50/006B3D/FFFFFF?text=AM"
+                logo: "logo-equipe/AS-MANGASPORT.webp"
             },
             equipeB: {
                 nom: "CMS",
-                logo: "https://via.placeholder.com/50/0056B8/FFFFFF?text=CMS"
+                logo: "logo-equipe/images.jpeg"
             },
             stade: "Stade Pierre-Claver Divounguy",
             ville: "Oyem",
@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "16/06/2024",
             equipeA: {
                 nom: "US Bitam",
-                logo: "https://via.placeholder.com/50/FFD700/000000?text=USB"
+                logo: "logo-equipe/US_Bitam.png"
             },
             equipeB: {
                 nom: "AS Pélican",
-                logo: "https://via.placeholder.com/50/FFFFFF/006B3D?text=PEL"
+                logo: "logo-equipe/AS-PELICAN.jpeg"
             },
             stade: "Stade Gaston Peyrille",
             ville: "Bitam",
@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "22/06/2024",
             equipeA: {
                 nom: "AS Stade Mandji",
-                logo: "https://via.placeholder.com/50/0056B8/FFFFFF?text=ASM"
+                logo: "logo-equipe/STADE-MANDJI.jpeg"
             },
             equipeB: {
                 nom: "Sogéa FC",
-                logo: "https://via.placeholder.com/50/FFFFFF/1A1A1A?text=SOG"
+                logo: "logo-equipe/Sogea_FC.gif"
             },
             stade: "Stade Pierre-Claver Divounguy",
             ville: "Port-Gentil",
@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "23/06/2024",
             equipeA: {
                 nom: "Missile FC",
-                logo: "https://via.placeholder.com/50/FFD700/0056B8?text=MIS"
+                logo: "logo-equipe/MISSILE-FC.png"
             },
             equipeB: {
                 nom: "AS Bouenguidi",
-                logo: "https://via.placeholder.com/50/FFFFFF/1A1A1A?text=BOU"
+                logo: "logo-equipe/as-bouenguidi.jpeg"
             },
             stade: "Stade de l'Amitié",
             ville: "Libreville",
@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "29/06/2024",
             equipeA: {
                 nom: "AS Mangasport",
-                logo: "https://via.placeholder.com/50/006B3D/FFFFFF?text=AM"
+                logo: "logo-equipe/AS-MANGASPORT.webp"
             },
             equipeB: {
                 nom: "USM Libreville",
-                logo: "https://via.placeholder.com/50/1A1A1A/FFFFFF?text=USM"
+                logo: "logo-equipe/USM_Libreville.gif"
             },
             stade: "Stade de Franceville",
             ville: "Franceville",
@@ -155,12 +155,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="equipes">
                         <div class="equipe">
-                            <img src="${match.equipeA.logo}" alt="${match.equipeA.nom}">
+                            <div class="equipe-logo-wrapper">
+                                <img src="${match.equipeA.logo}" alt="${match.equipeA.nom}">
+                            </div>
                             <span>${match.equipeA.nom}</span>
                         </div>
                         <span class="vs">VS</span>
                         <div class="equipe">
-                            <img src="${match.equipeB.logo}" alt="${match.equipeB.nom}">
+                            <div class="equipe-logo-wrapper">
+                                <img src="${match.equipeB.logo}" alt="${match.equipeB.nom}">
+                            </div>
                             <span>${match.equipeB.nom}</span>
                         </div>
                     </div>
@@ -205,12 +209,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 <div class="equipes">
                     <div class="equipe">
-                        <img src="${match.equipeA.logo}" alt="${match.equipeA.nom}">
+                        <div class="equipe-logo-wrapper">
+                            <img src="${match.equipeA.logo}" alt="${match.equipeA.nom}">
+                        </div>
                         <span>${match.equipeA.nom}</span>
                     </div>
                     <span class="vs">VS</span>
                     <div class="equipe">
-                        <img src="${match.equipeB.logo}" alt="${match.equipeB.nom}">
+                        <div class="equipe-logo-wrapper">
+                            <img src="${match.equipeB.logo}" alt="${match.equipeB.nom}">
+                        </div>
                         <span>${match.equipeB.nom}</span>
                     </div>
                 </div>

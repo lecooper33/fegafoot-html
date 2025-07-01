@@ -13,41 +13,35 @@
 <body>
   <!-- HEADER -->
   <header>
-    <div class="logo">
-      <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot" />
-    </div>
-    <button class="burger" aria-label="Ouvrir le menu">
-      <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
-    </button>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Accueil</a></li>
-        <li class="has-submenu">
-          <a href="#">Équipes</a>
-          <ul class="submenu">
-            <li><a href="equipe-M.html">Masculins</a></li>
-            <li><a href="#feminin">Féminin</a></li>
-          </ul>
-        </li>
-        <li class="has-submenu">
-          <a href="#">Compétitions</a>
-          <ul class="submenu">
-            <li><a href="competition.html">Nationales</a></li>
-            <li><a href="Competition-international.html">Internationales</a></li>
-          </ul>
-        </li>
-        <li><a href="fegafoot-tv.html">Fegafoot-tv</a></li>
-      </ul>
-    </nav>
-    <div class="search">
-      <form action="#" method="get">
-        <input type="text" placeholder="Rechercher..." name="search" />
-        <button type="submit" aria-label="Rechercher">
-          <span class="iconify" data-icon="mdi:magnify" data-width="22" data-height="22"></span>
-        </button>
-      </form>
-    </div>
-  </header>
+  <div class="logo">
+    <img src="img/logo-fegafoot-022-254x300.png" alt="Fegafoot">
+  </div>
+  <button class="burger" aria-label="Menu">
+    <span class="iconify" data-icon="mdi:menu" data-width="32" data-height="32"></span>
+  </button>
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Équipes</button>
+        <ul class="submenu">
+          <li><a href="equipe-M.html">Masculins</a></li>
+          <li><a href="#feminin">Féminin</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button class="submenu-toggle">Compétitions</button>
+        <ul class="submenu">
+          <li><a href="competition.html">Nationales</a></li>
+          <li><a href="Competition-international.html">Internationales</a></li>
+        </ul>
+      </li>
+      <li><a href="fegafoot-tv.html">Fegafoot-TV</a></li>
+      <li><a href="photo.html">Photos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main class="competitions-page">
     <section class="hero">
@@ -181,22 +175,22 @@
                 <h4>Zone de promotion</h4>
                 <div class="teams-grid">
                   <div class="team-card">
-                    <img src="logo-equipe/FC-OYEM.jpeg" alt="Équipe 1">
+                    <div class="maillot"><img src="logo-equipe/FC-OYEM.jpeg" alt="Équipe 1"></div>
                     <p>FC Oyem</p>
                     <span>Poule Nord - 1er</span>
                   </div>
                   <div class="team-card">
-                    <img src="logo-equipe/AS-PELICAN.jpeg" alt="Équipe 2">
+                   <div class="maillot"><img src="logo-equipe/AS-PELICAN.jpeg" alt="Équipe 2"></div>
                     <p>AS Pélican</p>
                     <span>Poule Nord - 2ème</span>
                   </div>
                   <div class="team-card">
-                    <img src="logo-equipe/STADE-MANDJI.jpeg" alt="Équipe 3">
+                   <div class="maillot"><img src="logo-equipe/STADE-MANDJI.jpeg" alt="Équipe 3"></div>
                     <p>Stade Mandji</p>
                     <span>Poule Sud - 1er</span>
                   </div>
                   <div class="team-card">
-                    <img src="logo-equipe/FC-PORTGENTIL.png" alt="Équipe 4">
+                    <div class="maillot"><img src="logo-equipe/FC-PORTGENTIL.png" alt="Équipe 4"></div>
                     <p>FC Port-Gentil</p>
                     <span>Poule Sud - 2ème</span>
                   </div>
@@ -231,12 +225,12 @@
                   <div class="match-card">
                     <div class="teams">
                       <div class="team">
-                        <img src="logo-equipe/AS-MANGASPORT.webp" alt="Équipe A">
+                        <div class="maillot"><img src="logo-equipe/AS-MANGASPORT.webp" alt="Équipe A"></div>
                         <span>AS Mangasport</span>
                       </div>
                       <div class="score">2 - 1</div>
                       <div class="team">
-                        <img src="logo-equipe/US_Bitam.png" alt="Équipe B">
+                        <div class="maillot"><img src="logo-equipe/US_Bitam.png" alt="Équipe B"></div>
                         <span>US Bitam</span>
                       </div>
                     </div>
@@ -249,12 +243,12 @@
                   <div class="match-card upcoming">
                     <div class="teams">
                       <div class="team">
-                        <img src="logo-equipe/FC-MOUNANA.jpeg" alt="Équipe C">
+                        <div class="maillot"><img src="logo-equipe/FC-MOUNANA.jpeg" alt="Équipe C"></div>
                         <span>CF Mounana</span>
                       </div>
                       <div class="score">vs</div>
                       <div class="team">
-                        <img src="logo-equipe/MISSILE-FC.png" alt="Équipe D">
+                        <div class="maillot"><img src="logo-equipe/MISSILE-FC.png" alt="Équipe D"></div>
                         <span>Missile FC</span>
                       </div>
                     </div>
@@ -272,22 +266,22 @@
                 <div class="winners-timeline">
                   <div class="winner">
                     <span class="year">2023</span>
-                    <img src="logo-equipe/AS-MANGASPORT.webp" alt="Vainqueur 2023">
+                    <div class="maillot"><img src="logo-equipe/AS-MANGASPORT.webp" alt="Vainqueur 2023"></div>
                     <span>AS Mangasport</span>
                   </div>
                   <div class="winner">
                     <span class="year">2022</span>
-                    <img src="logo-equipe/US_Bitam.png" alt="Vainqueur 2022">
+                    <div class="maillot"><img src="logo-equipe/US_Bitam.png" alt="Vainqueur 2022"></div>
                     <span>US Bitam</span>
                   </div>
                   <div class="winner">
                     <span class="year">2021</span>
-                    <img src="logo-equipe/FC-MOUNANA.jpeg" alt="Vainqueur 2021">
+                    <div class="maillot"><img src="logo-equipe/FC-MOUNANA.jpeg" alt="Vainqueur 2021"></div>
                     <span>CF Mounana</span>
                   </div>
                   <div class="winner">
                     <span class="year">2020</span>
-                    <img src="logo-equipe/MISSILE-FC.png" alt="Vainqueur 2020">
+                    <div class="maillot"><img src="logo-equipe/MISSILE-FC.png" alt="Vainqueur 2020"></div>
                     <span>Missile FC</span>
                   </div>
                 </div>
@@ -314,7 +308,7 @@
                 <h4>Prochaine édition</h4>
                 <div class="match-preview">
                   <div class="team">
-                    <img src="logo-equipe/FC-MOUNANA.jpeg" alt="CF Mounana">
+                   <div class="maillot"><img src="logo-equipe/FC-MOUNANA.jpeg" alt="CF Mounana"></div>
                     <span>CF Mounana</span>
                     <small>Champion D1 2023</small>
                   </div>
@@ -323,7 +317,7 @@
                     <span class="date">Août 2024</span>
                   </div>
                   <div class="team">
-                    <img src="logo-equipe/AS-MANGASPORT.webp" alt="AS Mangasport">
+                   <div class="maillot"><img src="logo-equipe/AS-MANGASPORT.webp" alt="AS Mangasport"></div>
                     <span>AS Mangasport</span>
                     <small>Vainqueur Coupe 2023</small>
                   </div>
@@ -340,7 +334,7 @@
           <div class="competition-grid">
             <div class="competition-card small">
               <div class="competition-header">
-                <img src="img/u20.jpg" alt="U20">
+                <img src="actu-image/fb_img_1688869c1-2164e.jpg" alt="U20">
                 <h3>Championnat National U20</h3>
               </div>
               <div class="competition-body">
@@ -368,7 +362,7 @@
             
             <div class="competition-card small">
               <div class="competition-header">
-                <img src="img/coupe-jeunes.jpg" alt="Coupe Jeunes">
+                <img src="actu-image/Coupe.jpg" alt="Coupe Jeunes">
                 <h3>Coupe Nationale des Jeunes</h3>
               </div>
               <div class="competition-body">
@@ -436,7 +430,7 @@
                 <h4>Prochain tour</h4>
                 <div class="match-fixture">
                   <div class="team">
-                    <img src="logo-equipe/AMANI-FC.jpeg" alt="Amani FC">
+                   <div class="maillot"><img src="logo-equipe/AMANI-FC.jpeg" alt="Amani FC"></div>
                     <span>Amani FC</span>
                   </div>
                   <div class="vs">
@@ -444,7 +438,7 @@
                     <span class="date">15 avril 2024</span>
                   </div>
                   <div class="team">
-                    <img src="logo-equipe/LES-PANTHERES.png" alt="Les Panthères">
+                    <div class="maillot"><img src="logo-equipe/LES-PANTHERES.png" alt="Les Panthères"></div>
                     <span>Les Panthères</span>
                   </div>
                 </div>
@@ -454,64 +448,43 @@
         </div>
       </div>
     </section>
-    
-    <section class="partners">
-      <div class="container">
-        <h3>Partenaires Officiels</h3>
-        <div class="partners-grid">
-          <img src="img/partner1.png" alt="Partenaire 1">
-          <img src="img/partner2.png" alt="Partenaire 2">
-          <img src="img/partner3.png" alt="Partenaire 3">
-          <img src="img/partner4.png" alt="Partenaire 4">
-        </div>
-      </div>
-    </section>
+  
   </main>
 
   <!-- FOOTER -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-links">
-      <p>Liens rapides</p>
-      <a href="#Accueil">Accueil</a>
-      <a href="#actualites">Actualités</a>
-      <a href="#equipes">Équipes</a>
-      <a href="#calendrier">Calendrier</a>
-      <a href="#partenaires">Partenaires</a>
-    </div>
-    
-    <div class="logo-2">
-      <img src="img/FEGA.png" alt="Logo de la FEGAFOOT">
-    </div>
-    
-    <div class="footer-social">
-      <p>Suivez-nous</p>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/fegafoot" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:facebook"></span>
-        </a>
-        <a href="https://twitter.com/fegafoot" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:twitter"></span>
-        </a>
-        <a href="https://www.instagram.com/fegafoot/" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:instagram"></span>
-        </a>
-        <a href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" rel="noopener noreferrer">
-          <span class="iconify" data-icon="mdi:youtube"></span>
-        </a>
-        <a href="#">
-          <span class="iconify" data-icon="mdi:whatsapp"></span>
-        </a>
-      </div>
+ <footer>
+  <div class="logo-2">
+    <img src="img/FEGA.png" alt="Logo de la FEGAFOOT">
+  </div>
+  <div class="footer-social">
+    <p>Suivez-nous</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/fegafoot" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:facebook"></span>
+      </a>
+      <a href="https://twitter.com/fegafoot" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:twitter"></span>
+      </a>
+      <a href="https://www.instagram.com/fegafoot/" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:instagram"></span>
+      </a>
+      <a href="https://www.youtube.com/channel/UCXXXXXX" target="_blank" rel="noopener noreferrer">
+        <span class="iconify" data-icon="mdi:youtube"></span>
+      </a>
+      <a href="#">
+        <span class="iconify" data-icon="mdi:whatsapp"></span>
+      </a>
     </div>
   </div>
-  
   <div class="copyright">
     <p>&copy; 2025 FEGAFOOT TOUS DROITS RESERVES</p>
   </div>
 </footer>
-
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
   <script src="script.js"></script>
+  <script src="./js/actu.js"></script>
+  <script src="./js/match.js"></script>
+  <script src="./js/equipes.js"></script>
   <script>
     // Gestion des onglets
     const tabBtns = document.querySelectorAll('.tab-btn');

@@ -35,21 +35,45 @@ document.addEventListener('click', (e) => {
 // Gestion de l'affichage du header selon le scroll
 let lastScroll = 0;
 const header = document.querySelector('header');
+let hideHeaderTimeout = null;
+let lastDirection = null;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   if (currentScroll <= 0) {
     header.classList.remove('hide');
     header.classList.add('transparent');
+    lastDirection = null;
+    if (hideHeaderTimeout) {
+      clearTimeout(hideHeaderTimeout);
+      hideHeaderTimeout = null;
+    }
     return;
   }
   header.classList.remove('transparent');
   if (currentScroll > lastScroll) {
     // Scroll vers le bas : cacher le header
     header.classList.add('hide');
+    lastDirection = 'down';
+    if (hideHeaderTimeout) {
+      clearTimeout(hideHeaderTimeout);
+      hideHeaderTimeout = null;
+    }
   } else {
     // Scroll vers le haut : montrer le header
     header.classList.remove('hide');
+    if (lastDirection !== 'up') {
+      lastDirection = 'up';
+    }
+    if (hideHeaderTimeout) {
+      clearTimeout(hideHeaderTimeout);
+    }
+    hideHeaderTimeout = setTimeout(() => {
+      // Si on n'a pas rescrollé vers le haut, cacher le header
+      if (lastDirection === 'up') {
+        header.classList.add('hide');
+      }
+    }, 2000);
   }
   lastScroll = currentScroll;
 });

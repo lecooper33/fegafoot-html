@@ -72,6 +72,7 @@ a:hover {
 .international-page .hero {
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0, 0, 0, 0.247)), url('../video/Untitled\ design\ \(59\).webp');
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   color: var(--panthere-blanc);
   text-align: center;

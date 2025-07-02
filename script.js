@@ -73,7 +73,7 @@ window.addEventListener('scroll', () => {
       if (lastDirection === 'up') {
         header.classList.add('hide');
       }
-    }, 2000);
+    }, 4000);
   }
   lastScroll = currentScroll;
 });

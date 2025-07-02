@@ -16,6 +16,7 @@
        url('fonts/BebasNeue-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -24,6 +25,7 @@
        url('fonts/Rajdhani-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 .titre{
   font-family: 'Bebas Neue', sans-serif;
